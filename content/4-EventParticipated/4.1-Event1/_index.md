@@ -1,7 +1,7 @@
 ---
 title: "Event 1"
 date: "2025-09-09"
-weight: 1s
+weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
