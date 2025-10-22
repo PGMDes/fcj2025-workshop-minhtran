@@ -9,17 +9,17 @@ chapter: false
 
 ### Student Information:
 
-&emsp; **Full Name:** Le Vu Phuong Hoa
+&emsp; **Full Name:** Tran Huynh Bao Minh
 
-&emsp; **Phone Number:** 0327 030 024
+&emsp; **Phone Number:** 078 222 4 999
 
-&emsp; **Email:** danielleee241@gmail.com
+&emsp; **Email:** baominhbrthcs@gmail.com
 
 &emsp; **University:** FPT University Campus Ho Chi Minh
 
-&emsp; **Major:** Information Technology
+&emsp; **Major:** Artificial Intelligence
 
-&emsp; **Class:** SE181951
+&emsp; **Class:** SE193028
 
 &emsp; **Internship Company:** Amazon Web Services Vietnam Co., Ltd.
 
@@ -27,7 +27,7 @@ chapter: false
 
 &emsp; **Internship Duration:** From 12/08/2025 to 12/11/2025
 
-<img src="/images/avatar_new.png" alt="Your profile picture" width="450"/>
+<img src="/images/avatar_new.jpg" alt="Your profile picture" width="450"/>
 
 ### Report Content
 
