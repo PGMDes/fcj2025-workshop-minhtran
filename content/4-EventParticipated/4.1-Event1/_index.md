@@ -1,9 +1,9 @@
 ---
-title: "Event 2"
+title: "Event 1"
 date: "2025-09-09"
-weight: 1
+weight: 1s
 chapter: false
-pre: " <b> 4.2. </b> "
+pre: " <b> 4.1. </b> "
 ---
 
 # Report: “AI-Driven Development Lifecycle: Reimagining Software Engineering”

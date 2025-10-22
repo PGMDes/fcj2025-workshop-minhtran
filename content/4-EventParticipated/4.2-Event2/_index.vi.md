@@ -1,9 +1,9 @@
 ---
-title: "Event 3"
+title: "Event 2"
 date: "2025-09-09"
 weight: 1
 chapter: false
-pre: " <b> 4.3. </b> "
+pre: " <b> 4.2. </b> "
 ---
 
 # Bài thu hoạch “WORKSHOP KHOA HỌC DỮ LIỆU TRÊN AWS”
