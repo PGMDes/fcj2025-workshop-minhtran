@@ -1,146 +1,172 @@
 ---
-title: "Event 1"
+title: "Event 2"
 date: "2025-09-09"
 weight: 1
 chapter: false
-pre: " <b> 4.1. </b> "
+pre: " <b> 4.2. </b> "
 ---
 
-# Report on “Vietnam Cloud Day 2025: Ho Chi Minh City Connect Edition for Builders (Track 1: GenAI & Data)”
+# Report: “AI-Driven Development Lifecycle: Reimagining Software Engineering”
 
-### Purpose of the Event
+### Event Objectives
 
-- Learn about **security in GenAI and AI Agents** to strengthen enterprise safety.
-- Explore the **AI-Driven Development Lifecycle (AI-DLC)** and how it applies to software development.
-- Understand how to build a **unified data foundation** optimized for analytics and AI.
-- Stay updated on the **latest GenAI strategies and trends** on AWS.
+- Understand how AI can automate and optimize stages of the Software Development Lifecycle (SDLC).
+- Embrace the philosophy of AI augmenting humans rather than replacing them in the software development process.
+- Observe how tools like Amazon Q and other AI assistants support developers from ideation and code generation to infrastructure deployment (IaC).
+- Learn about the emerging trend of “AI-first development,” where AI becomes a natural part of future dev workflows.
 
 ### Speakers
 
-- **Jun Kai Loke** – AI/ML Specialist SA, AWS
-- **Kien Nguyen** – Solutions Architect, AWS
-- **Tamelly Lim** – Storage Specialist SA, AWS
-- **Binh Tran** – Senior Solutions Architect, AWS
-- **Taiki Dang** – Solutions Architect, AWS
-- **Michael Armentano** – Principal WW GTM Specialist, AWS
+- **Toan Huynh**
+- **My Nguyen**
 
-### Key Highlights
+### Highlights
 
-## Main Content
+#### Challenges of programming with AI
 
-1. **Unified Data Platform on AWS for AI & Analytics**
+The introduction covered the limitations and challenges of applying AI to programming:
 
-   - Building an end-to-end data pipeline: ingestion → storage → processing → access → governance.
-   - Breaking down silos in data, people, and processes; enabling self-service & standardized governance.
-   - Key services: S3, Glue, Redshift, Lake Formation, OpenSearch, Kinesis/MSK.
+- AI still struggles with projects that require deep domain knowledge and complex business logic.
+- Developers can have limited control over generated code when prompts and scope are not well-defined.
+- The quality of generated code depends heavily on the prompt and context provided to the model.
 
-2. **GenAI Strategy on AWS**
+This motivates the AI-DLC approach: creating a structured process to help AI and humans collaborate more effectively.
 
-   - Vision, trends, and enterprise adoption roadmap.
-   - Amazon Bedrock: model selection, RAG, guardrails, cost/latency optimization.
-   - AgentCore & Amazon Nova with support for frameworks (CrewAI, LangGraph, LlamaIndex...).
+#### How AI is changing software development
 
-3. **Securing GenAI Applications**
+This section analyzed how AI is transforming the software industry:
 
-   - OWASP LLM risks; multilayered security: infrastructure → model → application.
-   - Five pillars: Compliance, Privacy, Controls, Risk Management, Resilience.
-   - Tools: Bedrock Guardrails, Human-in-the-loop, Observability (OpenTelemetry).
+- AI assists code generation, technical documentation, API design, and automated testing.
+- Developers shift roles from “code writers” to “AI orchestrators” who guide, evaluate, and refine AI outputs.
+- Tools like Amazon Q, GitHub Copilot and ChatGPT for Developers become central parts of modern development workflows.
 
-4. **AI Agents – Productivity Boosters**
+#### 🔹 What is AI-DLC
 
-   - From assistants to multi-agent systems, automation with less supervision.
-   - Use cases: customer support, BI with Amazon Q (QuickSight), process automation.
+AI-Driven Development Lifecycle (AI-DLC) is an AI-augmented software development approach where each stage is designed to provide AI with specific context and goals to produce more accurate results.
 
-5. **Reliability & Accuracy of GenAI**
+🟧 Inception
 
-   - Mitigating hallucination with Prompt Engineering, RAG, Fine-tuning.
-   - RAG workflow: input → embedding → context → LLM → output.
+1. Build Context on Existing Code – feed AI the current codebase so it understands project structure.
+2. Elaborate Intent with User Stories – developers describe requirements via user stories to clarify goals.
+3. Plan with Units of Work – break work into small units the AI can execute and generate code for.
 
-6. **AI-Driven Development Lifecycle (AI-DLC)**
+🟦 Construction
 
-   - Lifecycle: Inception → Construction → Operation.
-   - Evolution: AI-Assisted → AI-Driven → AI-Managed.
-   - Implementation with IaC, automated testing, monitoring, and risk management.
+4. Domain Model (Component Model) – build domain models or architecture diagrams.
+5. Generate Code & Test – AI generates code and tests based on the plan.
+6. Add Architectural Components – add API layers, data layers, logging, and security components.
+7. Deploy with IaC & Tests – automate deployment using Infrastructure as Code and integration tests.
 
-7. **Amazon SageMaker – Unified Studio**
-   - Unified environment for data, analytics, and AI.
-   - Supports Lakehouse, governance, Zero-ETL integration (S3 ↔ Redshift, Aurora, DynamoDB, RDS...).
-   - Full MLOps: pipelines, registry, deployment, monitoring.
-   - Integrated with Bedrock & JumpStart to accelerate GenAI application development.
+_🔁 Each stage provides richer context for the next, helping AI produce increasingly accurate outputs._
 
-### Key Learnings
+#### Core Concepts
 
-- **Design Mindset**
+1. Context Awareness – AI needs clear context about code, requirements, and domain to work well.
+2. Collaborative Generation – humans and AI collaborate: AI generates code, humans direct and verify outputs.
+3. Continuous Refinement – iterative cycles to refine outputs and improve quality.
 
-  - Build data & AI systems end-to-end, removing silos.
-  - Apply self-service and governance principles from the start.
+#### Mob Elaboration
 
-- **Technical Architecture**
+Mob Elaboration is a collaborative method for elaborating intents:
 
-  - Integrate AWS services (S3, Glue, Redshift, SageMaker, Bedrock…) into a unified platform.
-  - Apply Zero-ETL, Lakehouse, MLOps for scalability, governance, and sustainable operations.
-  - Leverage AI Agents and GenAI frameworks to automate processes and boost productivity.
+- Multiple participants contribute user stories, questions, and additional context for the AI.
+- It helps AI gain deeper understanding of domain, goals, and complex logic.
+- This approach reduces the risk of misunderstandings—especially in large or cross-domain teams.
 
-- **Strategy**
+#### The 5-Stage Sequential Process of AI-DLC
 
-  - Define a GenAI adoption roadmap balancing innovation speed and cost.
-  - Focus on multilayered security: infra, model, application; combine guardrails & human-in-the-loop.
-  - Prioritize reliability and accuracy with RAG, prompt engineering, fine-tuning.
+AI-DLC runs through 5 phases:
 
-- **Software Development Mindset**
-  - Transition from AI-Assisted → AI-Driven → AI-Managed.
-  - Adopt AI-DLC to standardize development with AI involved at every stage.
+1. Inception – understand requirements and analyze the system.
+2. Construction – create domain models and initial structure.
+3. Generation – automated code generation.
+4. Testing – automated unit and integration testing.
+5. Deployment – deploy applications with IaC and CI/CD pipelines.
 
-### Application to Work
+Each loop improves the AI's outputs through incremental learning and feedback.
 
-- **In projects**:
+#### Demo 1 – Interactive AI-DLC experience with Amazon Q
 
-  - Experiment with AI Agents for registration/login and customer support.
-  - Use validation/guardrails to safely integrate GenAI into applications.
+The demo showcased AI-DLC in practice with a small project:
 
-- **In learning & team projects**:
+- Start from a simple idea and turn it into a user story describing business requirements.
+- AI helps split tasks into Units of Work and plans implementation details for each module.
+- Attendees interact with AI using questions, checkboxes, and logical conditions to clarify scope.
+- AI generates code, tests, project structure, and executes trial deployments.
+- The demo illustrated smooth collaboration between AI and humans: AI performs repetitive generation while humans steer and make decisions.
 
-  - Apply AI-DLC for task division: AI supports code/docs generation, team reviews & approves.
-  - Know when to use Lambda (serverless) vs containers (ECS/Fargate).
+#### Introducing Kiro
 
-- **As an intern**:
-  - Learn to apply a business-first approach when writing documentation or gathering requirements.
-  - Realize the importance of a solid data foundation for GenAI to deliver real value.
+Philosophy of Kiro
 
-### Event Experience
+The workshop introduced Kiro, an intelligent development environment built around the idea of “AI-native development” where AI is a core collaborator rather than just a tool.
 
-Joining the **“GenAI-powered App-DB Modernization”** workshop was a highly valuable experience, giving me a holistic view of modernizing applications and databases using cutting-edge methods and tools. Some key takeaways:
+Kiro’s philosophy emphasizes three points:
 
-#### Learning from Experts
+1. Deep integration with the development process – AI participates in planning, context management, and impact analysis.
+2. Comprehensive project context – Kiro maintains ongoing awareness of project structure so AI can interact with the whole project rather than single files.
+3. Intelligent control & collaboration – developers guide AI via contextual commands so each change has clear intent and consistency.
 
-- AWS experts shared the latest trends in **GenAI, Data Foundation, and Security**.
-- Gained a clearer understanding of building a **unified data foundation** for AI & Analytics.
-- Impressed by the vision of **AI Agents** and their potential to enhance productivity.
+This makes Kiro more than a code generator: it is an ecosystem for collaborative human–AI development.
 
-#### Hands-on Technical Insights
+Project structure in Kiro
 
-- Learned how to design an end-to-end data pipeline: ingestion → storage → processing → access → governance.
-- Explored tools like **Amazon Bedrock, AgentCore, and SageMaker Unified Studio**.
-- Discovered solutions to **reduce hallucination** (Prompt Engineering, RAG).
-- Understood how to apply **AI-DLC** for balancing tasks between AI and humans in software development.
+Unlike traditional text editors like VSCode or JetBrains, Kiro is an AI-aware workspace with structural awareness.
 
-#### Tools & Methods in Practice
+Its project model includes:
 
-- Explored **Bedrock Guardrails** to ensure safe GenAI implementation.
-- Understood when to use **serverless (AWS Lambda)** vs **containerization (ECS/Fargate)**.
-- Learned how to leverage **Amazon Q** for BI (QuickSight) and customer support.
+- Context Layer – stores context, domain models, and relationships among modules.
+- Task Layer – manages Units of Work tracked and executed by AI.
+- AI Agent Layer – agents handle specific tasks (code, tests, refactor, deploy) enabling a multi-agent collaborative model.
+- Human-in-the-Loop Control – developers can confirm, modify, or reject AI outputs at any stage.
 
-#### Networking & Exchange
+Kiro therefore becomes an ecosystem for coordinated human–AI development rather than just a code editor.
 
-- The event was a great chance to interact with AWS experts and learn from real-world case studies.
-- Realized the importance of a **business-first approach** in every technology decision.
+#### Demo 2: Kiro in practice
 
-#### Key Takeaways
+In the demonstration, the presenters showed how Kiro implements AI-DLC:
 
-- GenAI is not just a tool, but requires the **right strategy and architecture** to generate value.
-- **Data and security** are the foundations—without them, AI cannot thrive.
-- **AI Agents and AI-DLC** are set to reshape how we design and operate systems.
+1. User provides a basic business requirement like “build an event management system.”
+2. Kiro analyzes intent, creates a domain model, and splits work into user stories.
+3. AI generates modules, components, and corresponding test cases.
+4. Developers interact with a checkbox-based task control to approve each unit of work.
+5. Kiro finally deploys the completed system using IaC and automated tests.
 
-#### Event Photos
+The demo proved AI-DLC is practical: AI, human operators, and processes integrate into a single coherent workflow.
 
-_(Add photos from the event here)_
+### Event experience
+
+Attending the workshop “AI DLC x Kiro: Reinventing Developer Experience with AI” was highly valuable, clarifying how AI can be deeply embedded into the developer experience and how Kiro’s design offers a fresh approach for developers.
+
+#### Insights from expert speakers
+
+- Speakers presented AI-DLC as a platform that automates many SDLC tasks and supports software development using AI.
+- The Kiro introduction gave a perspective on designing an AI-native text editor rather than adding AI plugins to legacy editors.
+- I was particularly impressed by Kiro’s philosophy: minimalism, high performance, user-focused experience, and modular extensibility.
+
+#### Practical technical takeaways
+
+- The demo showed how AI-DLC and Kiro can create, refactor, and optimize code efficiently.
+- A small starter project was created and managed within Kiro, demonstrating auto-refactoring, test generation and logic analysis.
+- Compared to editors like VSCode and Sublime, Kiro stands out for its AI-first architecture and lightweight plugin model that preserves performance.
+
+#### Modern tooling and potential applications
+
+- Experiencing AI-DLC on Kiro highlighted the potential to automate development workflows—especially code generation, documentation, and debugging.
+- I saw opportunities to build personal learning and productivity tools that provide smart suggestions and accelerate development.
+- Kiro’s modular design inspires approaches to building flexible, maintainable systems.
+
+#### Networking and discussions
+
+- The workshop offered chances to connect with developers, AI researchers, and product designers, deepening my understanding of AI-augmented development.
+- Discussions helped me see AI as a creative collaborator, allowing developers to focus more on system logic and architecture.
+
+#### Key lessons
+
+- AI-DLC combined with Kiro is a model for next-generation development tools—AI-first IDEs that deeply integrate AI into the workflow.
+- Kiro’s “less is more” philosophy shows that simplicity and performance can deliver a stronger developer experience than overly complex systems.
+- I learned that successful AI adoption depends not only on technology but also on the design philosophy and integration approach used in tooling.
+
+#### Sample images from the event
+
+## ![Event images](/images/4-EventParticipated/event4-2-1.png)

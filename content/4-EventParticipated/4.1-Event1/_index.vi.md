@@ -1,154 +1,170 @@
 ---
-
-title: "Event 1"
+title: "Event 2"
 date: "2025-09-09"
 weight: 1
 chapter: false
-pre: " <b> 4.1. </b> "
-
+pre: " <b> 4.2. </b> "
 ---
 
-# Bài thu hoạch “Vietnam Cloud Day 2025: Ho Chi Minh City Connect Edition for Builders (Track 1: GenAI & Data)”
+# Bài thu hoạch “Vòng đời phát triển theo hướng AI: Tái định hình kỹ thuật phần mềm”
 
 ### Mục Đích Của Sự Kiện
 
-- Tìm hiểu **bảo mật trong GenAI và AI Agent** để tăng cường an toàn cho doanh nghiệp
-- Khám phá **AI-Driven Development Lifecycle (AI-DLC)** và ứng dụng vào quy trình phát triển phần mềm
-- Xây dựng **nền tảng dữ liệu hợp nhất** nhằm tối ưu cho phân tích và trí tuệ nhân tạo
-- Cập nhật **chiến lược và xu hướng GenAI** mới nhất trên AWS
+- Hiểu rõ cách AI có thể **tự động hóa và tối ưu hóa** từng giai đoạn trong vòng đời phát triển phần mềm (Software Development Lifecycle – SDLC).
+- Nắm bắt được triết lý **AI hỗ trợ con người thay vì thay thế con người** trong quá trình xây dựng ứng dụng.
+- Trực tiếp quan sát cách **Amazon Q** và các công cụ AI khác hỗ trợ lập trình viên từ giai đoạn khởi tạo ý tưởng, viết mã, đến triển khai hạ tầng (IaC – Infrastructure as Code).
+- Nhận thức được xu hướng “**AI-first development**” – nơi AI trở thành một phần tự nhiên của quy trình phát triển phần mềm tương lai.
 
 ### Danh Sách Diễn Giả
 
-- **Jun Kai Loke** – AI/ML Specialist SA, AWS
-- **Kien Nguyen** – Solutions Architect, AWS
-- **Tamelly Lim** – Storage Specialist SA, AWS
-- **Binh Tran** – Senior Solutions Architect, AWS
-- **Taiki Dang** – Solutions Architect, AWS
-- **Michael Armentano** – Principal WW GTM Specialist, AWS
+- **Toan Huynh**
+- **My Nguyen**
 
 ### Nội Dung Nổi Bật
 
-## Nội dung chính
+#### Thử thách khi lập trình với AI
 
-1. **Nền tảng dữ liệu thống nhất trên AWS cho AI & Analytics**
+Phần mở đầu trình bày những **hạn chế và thách thức khi đưa AI vào lập trình**:
 
+- AI chưa thể xử lý các project có logic phức tạp, đòi hỏi hiểu biết sâu về ngữ cảnh nghiệp vụ.
+- Lập trình viên **khó kiểm soát chi tiết** trong mã sinh ra nếu không mô tả rõ ràng mục tiêu và phạm vi.
+- Chất lượng code phụ thuộc nhiều vào **prompt và context** mà người dùng cung cấp.
 
-    - Xây dựng data platform end-to-end: ingestion → lưu trữ → xử lý → truy cập → quản trị.
-    - Xóa silo dữ liệu, con người, quy trình; hỗ trợ self-service & chuẩn hóa governance.
-    - Dịch vụ tiêu biểu: S3, Glue, Redshift, Lake Formation, OpenSearch, Kinesis/MSK.
+Đây chính là lý do AI-DLC ra đời: **tạo ra một quy trình có cấu trúc, giúp AI và con người phối hợp hiệu quả hơn.**
 
-2. **Chiến lược GenAI trên AWS**
+#### AI in Development – How AI is Changing Software
 
+Phần này phân tích cách **AI đang thay đổi ngành phần mềm**:
 
-    - Tầm nhìn, xu hướng và lộ trình áp dụng GenAI.
-    - Amazon Bedrock: chọn model, RAG, guardrails, tối ưu chi phí/độ trễ.
-    - AgentCore & Amazon Nova hỗ trợ tích hợp công cụ và frameworks (CrewAI, LangGraph, LlamaIndex...).
+- AI hỗ trợ sinh code, tạo tài liệu kỹ thuật, thiết kế API, và kiểm thử tự động.
+- Developer chuyển vai trò từ “code writer” sang “AI orchestrator” — người điều phối, định hướng và đánh giá đầu ra.
+- Các công cụ như **Amazon Q, GitHub Copilot, ChatGPT for Developers** trở thành **công cụ trung tâm trong workflow của team dev hiện đại**.
 
-3. **Bảo mật ứng dụng GenAI**
+#### 🔹 Giới thiệu về AI-DLC là gì
 
+**AI-Driven Development Lifecycle (AI-DLC)** là phương pháp tiếp cận phát triển phần mềm có sự đồng hành của AI, nơi mỗi bước được thiết kế để **cung cấp cho AI ngữ cảnh và mục tiêu cụ thể** nhằm tạo ra kết quả chính xác hơn.
 
-    - Rủi ro OWASP LLM; bảo mật nhiều lớp: hạ tầng → mô hình → ứng dụng.
-    - 5 trụ cột: Compliance, Privacy, Controls, Risk Management, Resilience.
-    - Công cụ: Bedrock Guardrails, Human-in-the-loop, Observability (OpenTelemetry).
+**🟧 Inception**
 
-4. **AI Agents – Tăng cường năng suất**
+1. **Build Context on Existing Codes** – AI được “nuôi” bằng mã nguồn hiện tại để hiểu cấu trúc dự án.
+2. **Elaborate Intent with User Stories** – Developer mô tả yêu cầu thông qua user story, làm rõ mục tiêu.
+3. **Plan with Units of Work** – Phân tách công việc thành các đơn vị nhỏ để AI có thể thực thi và sinh code từng phần.
 
+**🟦 Construction**
 
-    - Từ assistant đến multi-agent systems, tự động hóa và giảm giám sát.
-    - Ứng dụng: CSKH, BI với Amazon Q (QuickSight), tự động hóa quy trình.
+4. **Domain Model (Component Model)** – Xây dựng mô hình miền hoặc sơ đồ kiến trúc logic.
+5. **Generate Code & Test** – AI sinh code và test tự động dựa trên thông tin đã lên kế hoạch.
+6. **Add Architectural Components** – Bổ sung các thành phần kiến trúc như API, data layer, logging, security.
+7. **Deploy with IaC & Tests** – Tự động triển khai hệ thống với Infrastructure as Code và test tích hợp.
 
-5. **Độ tin cậy & tính đúng đắn của GenAI**
+_🔁 Mỗi bước đều cung cấp thêm “rich context” cho bước kế tiếp, giúp AI hiểu sâu hơn về hệ thống và sinh ra kết quả ngày càng chính xác._
 
+#### CORE CONCEPTS – Ba nguyên lý cốt lõi
 
-    - Giảm hallucination bằng Prompt Engineering, RAG, Fine-tuning.
-    - RAG workflow: input → embedding → context → LLM → output.
+1. **Context Awareness** – AI cần có ngữ cảnh rõ ràng về mã, yêu cầu và domain để hoạt động hiệu quả.
+2. **Collaborative Generation** – Con người và AI hợp tác: AI sinh code, con người định hướng và kiểm duyệt.
+3. **Continuous Refinement** – Quy trình lặp lại liên tục để tinh chỉnh đầu ra và cải thiện chất lượng.
 
-6. **AI-Driven Development Lifecycle (AI-DLC)**
+#### Mob Elaboration
 
+Mob Elaboration là phương pháp mở rộng yêu cầu (intent elaboration) theo hình thức cộng tác nhóm:
 
-    - Vòng đời: Inception → Construction → Operation.
-    - Tiến hóa: AI-Assisted → AI-Driven → AI-Managed.
-    - Triển khai với IaC, test tự động, giám sát & quản trị rủi ro.
+- Nhiều thành viên cùng nhau mô tả yêu cầu, đặt câu hỏi, và bổ sung thông tin cho AI.
+- Giúp AI **hiểu sâu hơn** về nghiệp vụ, mục tiêu và logic phức tạp của dự án.
+- Cách tiếp cận này giúp **giảm rủi ro hiểu sai yêu cầu**, đặc biệt trong các team lớn hoặc đa miền.
 
-7. **Amazon SageMaker – Unified Studio**
+#### 5-Stage Sequential Process của AI-DLC
 
+AI-DLC được thực hiện qua 5 giai đoạn:
 
-    - Nền tảng hợp nhất cho data, analytics & AI.
-    - Hỗ trợ Lakehouse, governance, Zero-ETL integration (S3 ↔ Redshift, Aurora, DynamoDB, RDS…).
-    - MLOps đầy đủ: pipelines, registry, deployment, monitoring.
-    - Tích hợp Bedrock & JumpStart để tăng tốc phát triển ứng dụng GenAI.
+1. **Inception** – Hiểu yêu cầu, phân tích hệ thống.
+2. **Construction** – Tạo mô hình miền và cấu trúc ban đầu.
+3. **Generation** – Sinh mã tự động.
+4. **Testing** – Tự động hóa kiểm thử đơn vị và tích hợp.
+5. **Deployment** – Triển khai ứng dụng với IaC và CI/CD pipelines.
 
-### Những Gì Học Được
+Mỗi vòng lặp giúp AI học thêm và cải thiện chất lượng đầu ra.
 
-- **Tư duy thiết kế**
+#### Demo 1 – Trải nghiệm trực quan AI DLC với Amazon Q
 
-  - Thiết kế hệ thống dữ liệu & AI theo hướng end-to-end, loại bỏ silo.
-  - Ứng dụng nguyên tắc self-service và governance ngay từ đầu.
+Buổi demo minh họa cách áp dụng AI-DLC trong thực tế thông qua **một dự án nhỏ**:
 
-- **Kiến trúc kỹ thuật**
+- Bắt đầu từ **ý tưởng đơn giản** → chuyển thành **user story** mô tả yêu cầu nghiệp vụ.
+- AI hỗ trợ **phân chia công việc (Units of Work)** và lập kế hoạch chi tiết cho từng module.
+- Người tham dự có thể **điều khiển AI thông qua câu hỏi, checkbox và điều kiện logic**, giúp AI hiểu rõ phạm vi công việc.
+- AI tiếp tục sinh code, viết test, tạo cấu trúc dự án và triển khai thử nghiệm tự động.
+- Demo thể hiện rõ cách **AI và con người phối hợp nhịp nhàng**: AI làm việc lặp đi lặp lại, con người định hướng và ra quyết định chiến lược.
 
-  - Tích hợp dịch vụ AWS (S3, Glue, Redshift, SageMaker, Bedrock…) thành nền tảng thống nhất.
-  - Áp dụng Zero-ETL, Lakehouse, MLOps để đảm bảo tính mở rộng, quản trị và vận hành bền vững.
-  - Tận dụng AI Agents và GenAI frameworks để tự động hóa quy trình & tăng năng suất.
+#### Giới Thiệu Về Kiro
 
-- **Chiến lược**
+**Triết Lý Của Kiro**
 
-  - Xác định lộ trình áp dụng GenAI trong doanh nghiệp, cân bằng giữa tốc độ đổi mới và chi phí.
-  - Chú trọng bảo mật nhiều lớp: hạ tầng, mô hình, ứng dụng; kết hợp guardrails & human-in-the-loop.
-  - Ưu tiên độ tin cậy và tính đúng đắn của AI qua RAG, prompt engineering, fine-tuning.
+Phần tiếp theo của workshop giới thiệu **Kiro**, một môi trường phát triển thông minh được thiết kế **xoay quanh triết lý “AI-native development”** – nơi AI là một phần cốt lõi, không phải chỉ là công cụ hỗ trợ.
 
-- **Tư duy phát triển phần mềm**
-  - Tiến hóa từ AI-Assisted → AI-Driven → AI-Managed.
-  - AI-DLC (AI-Driven Development Lifecycle) giúp chuẩn hóa quy trình phát triển với AI tham gia ở mọi giai đoạn.
+Triết lý của Kiro tập trung vào ba yếu tố chính:
 
-### Ứng Dụng Vào Công Việc
+1. **Tích hợp sâu với quy trình phát triển** – AI không chỉ hỗ trợ viết code, mà còn tham gia lập kế hoạch, quản lý context, và phân tích tác động thay đổi.
+2. **Hiểu ngữ cảnh dự án toàn diện** – Kiro duy trì trạng thái hiểu biết liên tục về cấu trúc hệ thống, cho phép AI tương tác với toàn bộ project thay vì từng file riêng lẻ.
+3. **Kiểm soát & cộng tác thông minh** – Lập trình viên có thể hướng dẫn AI thông qua **contextual commands**, giúp đảm bảo rằng mỗi thay đổi đều có mục đích rõ ràng và nhất quán với hệ thống.
 
-- **Trong dự án**:
+**Cấu Trúc Project Trong Kiro**
 
-  - Thử AI Agent cho đăng ký/đăng nhập và hỗ trợ khách hàng.
-  - Dùng validation/guardrails để tích hợp GenAI an toàn.
+Khác với các **text editor truyền thống** như VSCode hay JetBrains, Kiro không chỉ là môi trường viết mã — nó là **AI workspace có nhận thức cấu trúc**.
 
-- **Trong học tập & team project**:
+Cấu trúc project trong Kiro bao gồm:
 
-  - Áp dụng AI-DLC để chia việc: AI hỗ trợ tạo code/tài liệu, team review & approve.
-  - Biết khi nào dùng Lambda (serverless) và khi nào dùng container (ECS/Fargate).
+- **Context Layer** – Lưu trữ ngữ cảnh, domain model, và quan hệ giữa các module.
+- **Task Layer** – Quản lý các đơn vị công việc (Units of Work) được AI theo dõi và hoàn thành dần.
+- **AI Agent Layer** – Mỗi tác vụ (code, test, refactor, deploy) có agent riêng đảm nhận, tạo ra mô hình phát triển **đa agent – hợp tác – song song**.
+- **Human-in-the-Loop Control** – Lập trình viên có thể can thiệp ở mọi bước: xác nhận, sửa đổi hoặc từ chối đầu ra của AI.
 
-- **Trong vai trò học việc**:
-  - Học cách tiếp cận business-first khi viết tài liệu, thu thập yêu cầu.
-  - Nhận ra data foundation là yếu tố cốt lõi để GenAI mang lại giá trị.
+Điều này giúp Kiro không chỉ là công cụ sinh code mà trở thành **một hệ sinh thái phát triển hợp tác giữa người và AI**.
+
+#### Demo 2: Kiro – Áp Dụng AI-DLC
+
+Trong phần trình diễn, diễn giả minh họa cách Kiro vận hành **AI-DLC một cách liền mạch**:
+
+1. Người dùng nhập **một yêu cầu nghiệp vụ cơ bản**, ví dụ “xây dựng hệ thống quản lý sự kiện”.
+2. Kiro tự động phân tích intent, tạo domain model và chia nhỏ thành các user story.
+3. AI trong Kiro sinh ra **các module, component và test case** tương ứng.
+4. Developer có thể tương tác qua **bảng kiểm (checkbox-based task control)** để xác nhận từng phần việc.
+5. Cuối cùng, Kiro **triển khai hệ thống hoàn chỉnh** với IaC và kiểm thử tự động.
+
+Buổi demo cho thấy **AI-DLC không chỉ là lý thuyết**, mà có thể **được triển khai thực tế ngay trong môi trường Kiro** — nơi AI, con người, và quy trình phát triển hòa quyện thành một hệ thống thống nhất.
 
 ### Trải nghiệm trong event
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+Tham gia buổi workshop **“AI DLC x Kiro: Reinventing Developer Experience with AI”** là một trải nghiệm vô cùng bổ ích, giúp tôi hiểu rõ hơn về cách **AI được tích hợp sâu vào môi trường phát triển phần mềm** và cách mà **triết lý thiết kế của Kiro** mang lại hướng tiếp cận mới cho developer.
 
-#### Học hỏi từ các chuyên gia
+#### Học hỏi từ các diễn giả có chuyên môn cao
 
-- Các chuyên gia AWS chia sẻ xu hướng mới về **GenAI, Data Foundation và Security**.
-- Hiểu rõ hơn cách xây dựng **nền tảng dữ liệu thống nhất** để phục vụ AI & Analytics.
-- Ấn tượng với tầm nhìn **AI Agents** và tiềm năng nâng cao năng suất trong doanh nghiệp.
+- Các diễn giả đã chia sẻ về **AI DLC** – một nền tảng hỗ trợ phát triển phần mềm dựa trên AI, giúp tự động hóa nhiều quy trình trong SDLC.
+- Ngoài ra, phần giới thiệu về **Kiro Editor** mang lại cái nhìn sâu sắc về cách xây dựng một text editor theo hướng **AI-native** thay vì chỉ “thêm plugin AI” vào môi trường cũ.
+- Tôi đặc biệt ấn tượng với triết lý của Kiro: **tối giản, hiệu năng cao, tập trung vào trải nghiệm người dùng và khả năng mở rộng theo module**.
 
 #### Trải nghiệm kỹ thuật thực tế
 
-- Học cách thiết kế pipeline dữ liệu end-to-end: ingestion → lưu trữ → xử lý → truy cập → governance.
-- Tiếp cận các công cụ như **Amazon Bedrock, AgentCore, SageMaker Unified Studio**.
-- Trải nghiệm các giải pháp **giảm hallucination** (Prompt Engineering, RAG).
-- Hiểu cách áp dụng **AI-DLC** để phân chia task giữa AI và con người trong quá trình phát triển phần mềm.
+- Buổi demo minh họa cách sử dụng **AI DLC kết hợp với Kiro** để tạo, chỉnh sửa và tối ưu mã nguồn một cách thông minh.
+- Tôi được chứng kiến **một project nhỏ** được khởi tạo và quản lý ngay trong Kiro, với khả năng AI tự động đề xuất refactor, viết test case và phân tích logic code.
+- So với các text editor phổ biến như VSCode hay Sublime, Kiro thể hiện sự khác biệt nhờ kiến trúc **AI-first** và **plugin architecture nhẹ**, cho phép tích hợp AI mà không làm giảm hiệu suất.
 
-#### Ứng dụng công cụ và phương pháp
+#### Ứng dụng công cụ hiện đại
 
-- Tìm hiểu **Bedrock Guardrails** để đảm bảo tính an toàn khi triển khai GenAI.
-- Thấy rõ giá trị của **serverless (AWS Lambda)** và khi nào nên dùng **containerization (ECS/Fargate)**.
-- Biết cách tận dụng **Amazon Q** cho BI (QuickSight) và hỗ trợ customer support.
+- Việc trải nghiệm **AI DLC trên Kiro** giúp tôi hiểu rõ hơn về khả năng **tự động hóa quy trình phát triển**, đặc biệt là ở các bước như code generation, documentation và debugging.
+- Tôi nhận ra tiềm năng của việc **xây dựng công cụ học tập và làm việc cá nhân** có khả năng gợi ý thông minh, giúp rút ngắn thời gian phát triển và nâng cao chất lượng sản phẩm.
+- Các khái niệm về modular design của Kiro cũng gợi ý cho tôi hướng đi trong việc **thiết kế hệ thống linh hoạt, dễ mở rộng và dễ bảo trì**.
 
-#### Kết nối & trao đổi
+#### Kết nối và trao đổi
 
-- Event là cơ hội để trao đổi với chuyên gia AWS và học hỏi từ case study thực tế.
-- Nhận ra tầm quan trọng của **business-first approach** trong mọi quyết định công nghệ.
+- Workshop tạo cơ hội để tôi **giao lưu với các developer, nhà nghiên cứu AI và product designer**, từ đó hiểu thêm về xu hướng **AI-augmented development**.
+- Qua các cuộc thảo luận, tôi học được nhiều về cách **AI có thể đóng vai trò cộng tác viên sáng tạo**, giúp developer tập trung hơn vào logic và tư duy hệ thống thay vì những thao tác lặp lại.
 
 #### Bài học rút ra
 
-- GenAI không chỉ là công cụ, mà cần **chiến lược & kiến trúc kỹ thuật** đúng đắn để tạo giá trị.
-- **Dữ liệu và bảo mật** là nền tảng, không có thì AI khó phát huy hiệu quả.
-- **AI Agents và AI-DLC** hứa hẹn thay đổi cách chúng ta thiết kế và vận hành hệ thống.
+- **AI DLC kết hợp Kiro** là ví dụ điển hình cho thế hệ công cụ phát triển mới — **AI-first IDE**, nơi AI không chỉ hỗ trợ mà còn đồng hành cùng lập trình viên trong mọi giai đoạn phát triển.
+- Triết lý “less is more” của Kiro nhấn mạnh rằng **sự tối giản và hiệu suất** có thể tạo ra trải nghiệm mạnh mẽ hơn bất kỳ hệ thống phức tạp nào.
+- Tôi học được rằng việc áp dụng AI hiệu quả không chỉ nằm ở công nghệ, mà còn ở **cách tích hợp và triết lý thiết kế**, điều này có thể được mang vào các dự án học tập hoặc phát triển phần mềm thực tế của tôi.
 
 #### Một số hình ảnh khi tham gia sự kiện
+
+## ![](/images/4-EventParticipated/event4-2-1.png)
