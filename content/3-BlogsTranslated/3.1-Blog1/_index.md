@@ -88,4 +88,4 @@ To learn more about the new features, SageMaker AI, and customer use cases, see 
 
 **Ankur Mehrotra** joined Amazon in 2008 and is the General Manager of Amazon SageMaker AI. Before SageMaker AI, he helped build Amazon.com’s advertising systems and automated pricing technologies.
 
-![image5](/images/3-BlogsTranslated/05.png)(\n)
+![image5](/images/3-BlogsTranslated/05.png)
