@@ -5,7 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-
 # **Các tính năng mới trong Amazon SageMaker AI tiếp tục thay đổi cách các tổ chức phát triển mô hình AI**
 
 *Bởi Ankur Mehrotra |  Ngày 10 tháng 7 năm 2025 | liên quan [Amazon Bedrock](https://aws.amazon.com/blogs/machine-learning/category/artificial-intelligence/amazon-machine-learning/amazon-bedrock/), [Amazon SageMaker AI](https://aws.amazon.com/blogs/machine-learning/category/artificial-intelligence/sagemaker/amazon-sagemaker-ai/), [Amazon SageMaker HyperPod](https://aws.amazon.com/blogs/machine-learning/category/artificial-intelligence/sagemaker/amazon-sagemaker-hyperpod/), [Amazon SageMaker JumpStart](https://aws.amazon.com/blogs/machine-learning/category/artificial-intelligence/sagemaker/amazon-sagemaker-jumpstart/), [Announcements](https://aws.amazon.com/blogs/machine-learning/category/post-types/announcements/)* 
@@ -96,4 +95,4 @@ Trong bài viết này, chúng tôi đã chia sẻ một số đổi mới trong
 
 **Ankur Mehrotra** gia nhập Amazon từ năm 2008 và hiện là Tổng Giám đốc Amazon SageMaker AI. Trước SageMaker AI, anh đã tham gia xây dựng hệ thống quảng cáo và công nghệ định giá tự động của Amazon.com.
 
-![image5](/images/3-BlogsTranslated/05.png) 
+![image5](/images/3-BlogsTranslated/05.png)(\n)
