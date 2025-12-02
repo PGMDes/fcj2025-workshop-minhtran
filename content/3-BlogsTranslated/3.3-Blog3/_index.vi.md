@@ -28,18 +28,18 @@ Sau đây là lược đồ mẫu cho bài viết.
 
 | Mô tả | Tên cột | Thẻ Geoproperty |
 | :---- | :---- | :---- |
-| ID bệnh nhân | patient\_id | Không |
-| ID phòng khám | clinic\_id | Có |
-| Địa chỉ phòng khám | clinic\_address | Có |
-| Mã ZIP phòng khám | clinic\_zip | Có |
-| Thành phố phòng khám | clinic\_city | Có |
-| Tên bệnh nhân | first\_name | Không |
-| Họ bệnh nhân | last\_name | Không |
-| Địa chỉ bệnh nhân | patient\_address | Không |
-| Mã ZIP bệnh nhân | patient\_zip | Không |
-| Loại vắc xin | vaccination\_type | Không |
-| Vĩ độ phòng khám | clinic\_lat | Có |
-| Kinh độ phòng khám | clinic\_long | Có |
+| ID bệnh nhân | patient_id | Không |
+| ID phòng khám | clinic_id | Có |
+| Địa chỉ phòng khám | clinic_address | Có |
+| Mã ZIP phòng khám | clinic_zip | Có |
+| Thành phố phòng khám | clinic_city | Có |
+| Tên bệnh nhân | first_name | Không |
+| Họ bệnh nhân | last_name | Không |
+| Địa chỉ bệnh nhân | patient_address | Không |
+| Mã ZIP bệnh nhân | patient_zip | Không |
+| Loại vắc xin | vaccination_type | Không |
+| Vĩ độ phòng khám | clinic_lat | Có |
+| Kinh độ phòng khám | clinic_long | Có |
 
 Các bước thiết lập giải pháp:
 
