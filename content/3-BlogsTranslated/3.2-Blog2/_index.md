@@ -6,125 +6,106 @@ chapter: false
 pre: " <b> 3.2. </b> "
 ---
 
-# Getting Started with Healthcare Data Lakes: Using Microservices
+# Improving Weather Forecast Accuracy with GPU-Accelerated Amazon AppStream 2.0 Instances
 
-Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A **data lake** is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.
+*By Rayette Toles-Abdullah, Austin Park, and Chris Quarcoo | May 13, 2025 | related: [Amazon AppStream 2.0](https://aws.amazon.com/pm/appstream2/), [Best Practices](https://aws.amazon.com/blogs/publicsector/category/post-types/best-practices/), [Customer Solutions](https://aws.amazon.com/blogs/publicsector/category/post-types/customer-solutions/), [Public Sector](https://aws.amazon.com/blogs/publicsector/category/public-sector/)*
 
-This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, _“Getting Started with Healthcare Data Lakes: Diving into Amazon Cognito”_, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
+![image1](/images/3-BlogsTranslated/06.png)
 
----
+Access to applications and data from anywhere and on any device is increasingly important for distributed, remote, and connectivity-constrained workforces. Field researchers and meteorologists around the world rely on real-time data ingestion for critical weather capabilities.
 
-## Architecture Guidance
+The Advanced Weather Interactive Processing System (AWIPS) is a weather forecasting and visualization system used by the U.S. National Weather Service (NWS) and meteorological agencies worldwide. AWIPS enables meteorologists to monitor, analyze, and forecast weather patterns with high accuracy, producing better forecasts and more effective warnings to help protect life and property. AWIPS ingests data from multiple sources—satellites, radar, and sounding balloons. The Common AWIPS Visualization Environment (CAVE) is the client application forecasters use to interact with AWIPS. CAVE receives processed data from AWIPS servers and provides visualization tools for forecasting, issuing alerts, and exploring weather data.
 
-The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the “pub/sub hub.”
+This post shows how to stream the Common AWIPS Visualization Environment (CAVE) using [Amazon AppStream 2.0](https://aws.amazon.com/pm/appstream2/) — a managed application streaming service that lets you stream desktop applications from AWS to any device without additional local hardware or software.
 
-This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of **HL7v2 messages** formatted in **Encoding Rules 7 (ER7)** through a REST interface.
+## Benefits of running GPU‑intensive applications on Amazon AppStream 2.0
 
-**The solution architecture is now as follows:**
+AppStream 2.0 offers several advantages:
 
-> _Figure 1. Overall architecture; colored boxes represent distinct services._
+- Users can access desktop applications from any supported device, including laptops, desktops, tablets, and phones—providing mobility and flexibility to remain productive whether in the office, at home, or on the move.
+- You can scale GPU capacity up and down on demand, optimizing costs by paying only for what you use and avoiding the expense of idle hardware.
+- There’s no need to overprovision GPU capacity, which is valuable for organizations with variable or seasonal workloads.
+- Users can access GPU‑accelerated applications from any device, including mobile devices, delivering consistent performance regardless of the end device’s local capabilities.
+- AppStream 2.0 handles GPU driver management, GPU fleet orchestration, and GPU‑optimized application stacks, reducing IT operational burden so teams can focus on strategic initiatives.
+- GPU usage in AppStream 2.0 is pay-as-you-go, eliminating high upfront capital expenditure for physical GPU servers and lowering the barrier for organizations to adopt GPU workloads.
+- AppStream 2.0 provides instance types optimized for graphics workloads such as Graphics G4dn and Graphics G5 powered by NVIDIA GPUs, enabling high performance for 3D modeling, video editing, and similar tasks.
+- GPU workloads and data never reside on the user’s device; they remain isolated in the AWS Cloud, improving security and compliance for sensitive applications and providing centralized control over data access and IP protection.
 
----
+![image2](/images/3-BlogsTranslated/07.png)  
+Figure 1. AWIPS CAVE visualization of Hurricane Lee on 2023-09-13 using Amazon AppStream 2.0.
 
-While the term _microservices_ has some inherent ambiguity, certain traits are common:
+## Explore the AWIPS solution
 
-- Small, autonomous, loosely coupled
-- Reusable, communicating through well-defined interfaces
-- Specialized to do one thing well
-- Often implemented in an **event-driven architecture**
+The AWIPS CAVE workstation is the primary interface forecasters use. AWIPS CAVE system requirements include:
 
-When determining where to draw boundaries between microservices, consider:
+- OpenGL 2.0 compatible device  
+- Minimum 4 GB RAM  
+- Minimum 2 GB disk space for cache  
+- NVIDIA graphics card  
+- Latest NVIDIA drivers
 
-- **Intrinsic**: technology used, performance, reliability, scalability
-- **Extrinsic**: dependent functionality, rate of change, reusability
-- **Human**: team ownership, managing _cognitive load_
+To configure AWIPS for Amazon AppStream 2.0, the steps include:
 
----
+### Create a Linux-based image
 
-## Technology Choices and Communication Scope
+Prepare a Linux environment and install AWIPS CAVE and its dependencies. This becomes the base for streaming the application.
 
-| Communication scope                       | Technologies / patterns to consider                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Within a single microservice              | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Between microservices in a single service | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Between services                          | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
+![image3](/images/3-BlogsTranslated/08.png)
 
----
+### Create an application optimization manifest
 
-## The Pub/Sub Hub
+AppStream 2.0 uses manifest files to optimize streaming performance by preloading required files. This script identifies all runtime files CAVE needs.
 
-Using a **hub-and-spoke** architecture (or message broker) works well with a small number of tightly related microservices.
+![image4](/images/3-BlogsTranslated/09.png)
 
-- Each microservice depends only on the _hub_
-- Inter-microservice connections are limited to the contents of the published message
-- Reduces the number of synchronous calls since pub/sub is a one-way asynchronous _push_
+### Add the application to the AppStream catalog
 
-Drawback: **coordination and monitoring** are needed to avoid microservices processing the wrong message.
+Register CAVE in the AppStream application catalog, specifying launch path, display name, and the optimization manifest you created.
 
----
+![image5](/images/3-BlogsTranslated/10.png)
 
-## Core Microservice
+### Configure the fleet
 
-Provides foundational data and communication layer, including:
+Create a fleet to manage the instances that will run your streamed application. Choose between on-demand (cost-efficient) or always-on (instant availability).
 
-- **Amazon S3** bucket for data
-- **Amazon DynamoDB** for data catalog
-- **AWS Lambda** to write messages into the data lake and catalog
-- **Amazon SNS** topic as the _hub_
-- **Amazon S3** bucket for artifacts such as Lambda code
+- Recommended: Graphics G4dn (stream.graphics.g4dn.xlarge) or Graphics Pro (stream.graphics-pro.4xlarge)  
+- Choose an On‑demand fleet  
+- Set desired capacity limits
 
-> Only allow indirect write access to the data lake through a Lambda function → ensures consistency.
+### Create the image
 
----
+Build the final Amazon AppStream image that will be used to launch streaming sessions. This captures installed applications and configuration.
 
-## Front Door Microservice
+![image6](/images/3-BlogsTranslated/11.png)
 
-- Provides an API Gateway for external REST interaction
-- Authentication & authorization based on **OIDC** via **Amazon Cognito**
-- Self-managed _deduplication_ mechanism using DynamoDB instead of SNS FIFO because:
-  1. SNS deduplication TTL is only 5 minutes
-  2. SNS FIFO requires SQS FIFO
-  3. Ability to proactively notify the sender that the message is a duplicate
+### Configure user authentication
 
----
+Choose between managing users directly in AppStream or integrating with your existing identity provider.
 
-## Staging ER7 Microservice
+- Configure an Amazon Cognito user pool  
+- Integrate AppStream with AWS Identity Center
 
-- Lambda “trigger” subscribed to the pub/sub hub, filtering messages by attribute
-- Step Functions Express Workflow to convert ER7 → JSON
-- Two Lambdas:
-  1. Fix ER7 formatting (newline, carriage return)
-  2. Parsing logic
-- Result or error is pushed back into the pub/sub hub
+The diagram below shows a high-level architecture of the solution.
 
----
+![image7](/images/3-BlogsTranslated/12.png)
 
-## New Features in the Solution
+Figure 2. High-level architecture showing Amazon AppStream 2.0, Amazon S3, Amazon EFS, Amazon Aurora, and Amazon EC2.
 
-### 1. AWS CloudFormation Cross-Stack References
+## AWIPS use cases beyond the field
 
-Example _outputs_ in the core microservice:
+NWS River Forecast Centers (RFCs) use AWIPS CAVE to monitor and forecast river stages, issue flood warnings, and provide hydrology information and drought conditions. Weather Forecast Offices (WFOs) rely on AWIPS CAVE for local forecasts, alerts, and advisories, coordinating with other WFOs, federal/state agencies, and private partners. The NWS National Hurricane Center (NHC) uses AWIPS CAVE for tropical cyclone monitoring and forecasting, supporting timely public information for emergency managers and stakeholders. Universities and research institutes also use AWIPS CAVE for research, teaching, and training in meteorology and atmospheric sciences.
 
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
-```
+## Conclusion
+
+Integrating AWIPS CAVE with Amazon AppStream 2.0 is a significant step forward for accessibility and forecasting capability. This solution addresses growing demand for remote access to mission‑critical meteorological applications, while delivering flexibility, cost efficiency, and performance.
+
+By leveraging cloud compute and GPU acceleration, meteorologists and researchers can access advanced weather analysis tools from anywhere on any device. This improves forecast accuracy and timeliness and enhances overall service effectiveness.
+
+As weather patterns grow more complex and climate challenges continue, innovations like this play a key role in supporting forecasters and improving community safety and preparedness.
+
+**About the authors**
+| :---- | :---- |
+| ![image8](/images/3-BlogsTranslated/13.jpg) | **Rayette Toles-Abdullah** — Principal Solutions Architect, Worldwide Public Sector Federal Civilian, AWS. Rayette has 23+ years of experience in systems integration, application modernization, and delivering high‑impact solutions to meet mission and business needs. |
+| ![image9](/images/3-BlogsTranslated/14.png) | **Austin Park** — Solutions Architect, Worldwide Public Sector Federal Civilian, AWS. Austin has 2+ years of experience, specializing in storage systems and helping customers migrate to the cloud. |
+| ![image10](/images/3-BlogsTranslated/15.jpg) | **Chris Quarcoo** — Solutions Architect, Worldwide Public Sector, AWS. Chris has 4+ years of industry experience focusing on cloud operations and container technologies, designing and deploying cloud solutions for government and public sector organizations. |
+

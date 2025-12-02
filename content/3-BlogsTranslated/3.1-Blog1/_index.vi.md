@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 3.1. </b> "
 ---
 
-# **Các tính năng mới trong Amazon SageMaker AI tiếp tục thay đổi cách các tổ chức phát triển mô hình AI.**
+# **Các tính năng mới trong Amazon SageMaker AI tiếp tục thay đổi cách các tổ chức phát triển mô hình AI**
 
 *Bởi Ankur Mehrotra |  Ngày 10 tháng 7 năm 2025 | liên quan [Amazon Bedrock](https://aws.amazon.com/blogs/machine-learning/category/artificial-intelligence/amazon-machine-learning/amazon-bedrock/), [Amazon SageMaker AI](https://aws.amazon.com/blogs/machine-learning/category/artificial-intelligence/sagemaker/amazon-sagemaker-ai/), [Amazon SageMaker HyperPod](https://aws.amazon.com/blogs/machine-learning/category/artificial-intelligence/sagemaker/amazon-sagemaker-hyperpod/), [Amazon SageMaker JumpStart](https://aws.amazon.com/blogs/machine-learning/category/artificial-intelligence/sagemaker/amazon-sagemaker-jumpstart/), [Announcements](https://aws.amazon.com/blogs/machine-learning/category/post-types/announcements/)* 
 
