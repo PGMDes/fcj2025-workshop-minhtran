@@ -69,7 +69,7 @@ CyberArk là công ty dẫn đầu về Bảo mật Danh tính, cung cấp cách
 
 *“Với kết nối từ xa tới SageMaker AI, các nhà khoa học dữ liệu của chúng tôi có sự linh hoạt chọn IDE giúp họ năng suất nhất. Các đội có thể tận dụng thiết lập cục bộ đã tùy chỉnh trong khi tiếp cận hạ tầng và kiểm soát bảo mật của SageMaker AI. Là công ty đặt an ninh lên hàng đầu, điều này cực kỳ quan trọng vì đảm bảo dữ liệu nhạy cảm luôn được bảo vệ, đồng thời cho phép đội ngũ cộng tác an toàn và tăng năng suất.”*
 
-\- Nir Feldman, Phó Chủ tịch cấp cao Kỹ thuật tại CyberArk
+- Nir Feldman, Phó Chủ tịch cấp cao Kỹ thuật tại CyberArk
 
 ## **Xây dựng mô hình và ứng dụng AI sinh nhanh hơn với MLflow 3.0 được quản lý toàn phần**
 
