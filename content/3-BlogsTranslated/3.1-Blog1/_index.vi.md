@@ -94,6 +94,6 @@ Trong bài viết này, chúng tôi đã chia sẻ một số đổi mới trong
 
 ## **Về tác giả**
 
-Ankur Mehrotra gia nhập Amazon từ năm 2008 và hiện là Tổng Giám đốc Amazon SageMaker AI. Trước SageMaker AI, anh đã tham gia xây dựng hệ thống quảng cáo và công nghệ định giá tự động của Amazon.com.
+**Ankur Mehrotra** gia nhập Amazon từ năm 2008 và hiện là Tổng Giám đốc Amazon SageMaker AI. Trước SageMaker AI, anh đã tham gia xây dựng hệ thống quảng cáo và công nghệ định giá tự động của Amazon.com.
 
 ![image5](/images/3-BlogsTranslated/05.png) 
