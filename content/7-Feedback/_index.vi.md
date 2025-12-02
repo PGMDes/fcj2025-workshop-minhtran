@@ -31,11 +31,16 @@ Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về t
 ### Một số câu hỏi khác
 
 - Điều bạn **hài lòng nhất** trong thời gian thực tập?
+  - Đó là được lên công ty ngồi máy lạnh và làm việc.
 - Điều bạn nghĩ công ty **cần cải thiện** cho các thực tập sinh sau?
+  - Khi mình đi ra đi vệ sinh thì rất dễ, còn lúc vào thì lại khó khăn hay bị khoá cửa ở ngoài.
 - Nếu giới thiệu cho bạn bè, bạn có **khuyên họ thực tập ở đây không**? Vì sao?
+  - Chắc chắn mình sẽ giới thiệu với bạn bè của mình, vì ở đây không chỉ môi trường làm việc rất chuyên nghiệp mà còn tiện cho việc đi chơi ở quận 1.
 
 ### Đề xuất & mong muốn
 
 - Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?
+  - Em chưa có ý tưởng gì ạ.
 - Bạn có muốn tiếp tục chương trình này trong tương lai?
+  - Có chứ, mình vẫn muốn tiếp tục thử sức với chương tình này.
 - Góp ý khác (tự do chia sẻ):
