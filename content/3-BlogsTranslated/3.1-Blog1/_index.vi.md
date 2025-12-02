@@ -28,7 +28,7 @@ AWS ra mắt [Amazon SageMaker HyperPod](https://aws.amazon.com/sagemaker/ai/hyp
 
 Bằng cách rút ngắn thời gian khắc phục sự cố từ ngày xuống phút, khả năng này giúp bạn tăng tốc đưa vào sản xuất và tối đa hóa lợi nhuận từ đầu tư AI.
 
-![image1](\images\3-BlogsTranslated\3.1-Blog1\01.jpg)
+![image1](/images/3-BlogsTranslated/01.jpg)
 
 DatologyAI xây dựng công cụ để tự động chọn dữ liệu tốt nhất để huấn luyện mô hình học sâu.
 
@@ -36,7 +36,7 @@ DatologyAI xây dựng công cụ để tự động chọn dữ liệu tốt nh
 
 \- Josh Wills, Thành viên Đội ngũ Kỹ thuật tại DatologyAI
 
-## ![][image2]
+![image2](/images/3-BlogsTranslated/02.jpg)
 
 Articul8 giúp doanh nghiệp xây dựng các ứng dụng AI sinh cho doanh nghiệp ở mức độ tinh vi.
 
@@ -49,7 +49,7 @@ Sau khi phát triển mô hình AI sinh trên SageMaker HyperPod, nhiều khách
 
 Giờ đây, bạn có thể [triển khai các mô hình open-weights](https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-hyperpod-launches-model-deployments-to-accelerate-the-generative-ai-model-development-lifecycle/) từ Amazon SageMaker JumpStart, cũng như các mô hình tùy chỉnh đã tinh chỉnh, trên SageMaker HyperPod chỉ trong vài phút mà không cần thiết lập hạ tầng thủ công. Nhà khoa học dữ liệu có thể chạy suy luận trên các mô hình JumpStart chỉ với một cú nhấp, đơn giản hóa và tăng tốc việc đánh giá mô hình. Quy trình cấp phát một lần, đơn giản này giảm thiết lập thủ công, mang lại môi trường suy luận đáng tin cậy và có khả năng mở rộng với nỗ lực ít nhất. Việc tải xuống các mô hình lớn được rút ngắn từ hàng giờ xuống còn vài phút, tăng tốc triển khai và rút ngắn thời gian ra thị trường.
 
-![][image3]
+![image3](/images/3-BlogsTranslated/03.jpg)
 
 H.AI tồn tại để phá vỡ giới hạn siêu trí tuệ với AI hướng tác vụ (agentic AI).
 
@@ -63,7 +63,7 @@ Hiện nay, nhiều khách hàng chọn các môi trường phát triển tích 
 
 Với [các kết nối từ xa mới tới SageMaker AI](https://aws.amazon.com/blogs/machine-learning/supercharge-your-ai-workflows-by-connecting-to-sagemaker-studio-from-visual-studio-code), nhà phát triển và nhà khoa học dữ liệu có thể nhanh chóng, liền mạch kết nối tới SageMaker AI từ VS Code cục bộ, vẫn giữ quyền truy cập công cụ tùy chỉnh và quy trình quen thuộc giúp họ làm việc hiệu quả nhất. Nhà phát triển có thể xây dựng và huấn luyện mô hình AI bằng IDE cục bộ trong khi SageMaker AI quản lý thực thi từ xa, nên bạn có thể làm việc trong môi trường ưa thích đồng thời hưởng lợi từ hiệu năng, khả năng mở rộng và bảo mật của SageMaker AI. Giờ đây bạn có thể chọn IDE ưa thích \- dù là IDE đám mây được quản lý toàn phần hay VS Code \- để tăng tốc phát triển mô hình AI bằng hạ tầng mạnh mẽ và khả năng mở rộng liền mạch của SageMaker AI.
 
-![][image4]
+![image4](/images/3-BlogsTranslated/04.jpg)
 
 CyberArk là công ty dẫn đầu về Bảo mật Danh tính, cung cấp cách tiếp cận toàn diện xoay quanh kiểm soát đặc quyền để bảo vệ trước các mối đe dọa mạng tiên tiến.
 
@@ -96,4 +96,4 @@ Trong bài viết này, chúng tôi đã chia sẻ một số đổi mới trong
 
 Ankur Mehrotra gia nhập Amazon từ năm 2008 và hiện là Tổng Giám đốc Amazon SageMaker AI. Trước SageMaker AI, anh đã tham gia xây dựng hệ thống quảng cáo và công nghệ định giá tự động của Amazon.com.
 
-[image1]: 
+![image5](/images/3-BlogsTranslated/05.png) 

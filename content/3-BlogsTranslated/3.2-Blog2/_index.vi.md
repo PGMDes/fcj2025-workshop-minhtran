@@ -6,125 +6,111 @@ chapter: false
 pre: " <b> 3.2. </b> "
 ---
 
-# Bắt đầu với healthcare data lakes: Sử dụng microservices
+# **Nâng cao độ chính xác dự báo thời tiết bằng các phiên bản đồ họa chuyên sâu của Amazon AppStream 2.0**
 
-Các data lake có thể giúp các bệnh viện và cơ sở y tế chuyển dữ liệu thành những thông tin chi tiết về doanh nghiệp và duy trì hoạt động kinh doanh liên tục, đồng thời bảo vệ quyền riêng tư của bệnh nhân. **Data lake** là một kho lưu trữ tập trung, được quản lý và bảo mật để lưu trữ tất cả dữ liệu của bạn, cả ở dạng ban đầu và đã xử lý để phân tích. data lake cho phép bạn chia nhỏ các kho chứa dữ liệu và kết hợp các loại phân tích khác nhau để có được thông tin chi tiết và đưa ra các quyết định kinh doanh tốt hơn.
+*Bởi Rayette Toles-Abdullah, Austin Park, và Chris Quarcoo | Ngày 13 tháng 5 năm 2025 | liên quan [Amazon AppStream 2.0](https://aws.amazon.com/blogs/publicsector/category/desktop-app-streaming/amazon-appstream-2-0/), [Best Practices](https://aws.amazon.com/blogs/publicsector/category/post-types/best-practices/), [Customer Solutions](https://aws.amazon.com/blogs/publicsector/category/post-types/customer-solutions/), [Public Sector](https://aws.amazon.com/blogs/publicsector/category/public-sector/)*
 
-Bài đăng trên blog này là một phần của loạt bài lớn hơn về việc bắt đầu cài đặt data lake dành cho lĩnh vực y tế. Trong bài đăng blog cuối cùng của tôi trong loạt bài, _“Bắt đầu với data lake dành cho lĩnh vực y tế: Đào sâu vào Amazon Cognito”_, tôi tập trung vào các chi tiết cụ thể của việc sử dụng Amazon Cognito và Attribute Based Access Control (ABAC) để xác thực và ủy quyền người dùng trong giải pháp data lake y tế. Trong blog này, tôi trình bày chi tiết cách giải pháp đã phát triển ở cấp độ cơ bản, bao gồm các quyết định thiết kế mà tôi đã đưa ra và các tính năng bổ sung được sử dụng. Bạn có thể truy cập các code samples cho giải pháp tại Git repo này để tham khảo.
+![image1](/images/3-BlogsTranslated/06.png)
 
----
+Khả năng truy cập ứng dụng và dữ liệu từ bất cứ đâu trên bất kỳ thiết bị nào ngày càng quan trọng đối với lực lượng lao động làm việc từ xa, kết nối hạn chế, và phân tán. Các nhà nghiên cứu thực địa và nhà khí tượng học trên toàn cầu phụ thuộc vào việc thu nhận dữ liệu theo thời gian thực cho các khả năng thời tiết thiết yếu.
 
-## Hướng dẫn kiến trúc
+Hệ thống Xử lý Tương tác Thời tiết Nâng cao (AWIPS) là một hệ thống dự báo và hiển thị thời tiết được sử dụng bởi Cơ quan Thời tiết Quốc gia Hoa Kỳ (NWS) và các cơ quan khí tượng trên toàn thế giới. Hệ thống cho phép các nhà khí tượng giám sát, phân tích và dự đoán các mô hình thời tiết với độ chính xác cao hơn, mang lại dự báo tốt hơn và cảnh báo hiệu quả hơn nhằm giúp bảo vệ tính mạng và tài sản. AWIPS tích hợp dữ liệu từ nhiều nguồn như vệ tinh, radar và bóng thám không. Common AWIPS Visualization Environment (CAVE) là ứng dụng phía khách mà các nhà dự báo dùng để tương tác với hệ thống AWIPS. CAVE nhận dữ liệu đã xử lý từ các máy chủ AWIPS và cung cấp các công cụ trực quan hóa giúp các nhà khí tượng lập dự báo, phát hành cảnh báo, và trực quan hóa dữ liệu thời tiết.
 
-Thay đổi chính kể từ lần trình bày cuối cùng của kiến trúc tổng thể là việc tách dịch vụ đơn lẻ thành một tập hợp các dịch vụ nhỏ để cải thiện khả năng bảo trì và tính linh hoạt. Việc tích hợp một lượng lớn dữ liệu y tế khác nhau thường yêu cầu các trình kết nối chuyên biệt cho từng định dạng; bằng cách giữ chúng được đóng gói riêng biệt với microservices, chúng ta có thể thêm, xóa và sửa đổi từng trình kết nối mà không ảnh hưởng đến những kết nối khác. Các microservices được kết nối rời thông qua tin nhắn publish/subscribe tập trung trong cái mà tôi gọi là “pub/sub hub”.
+Trong bài viết này, chúng tôi sẽ hướng dẫn bạn cách truyền phát ứng dụng Common AWIPS Visualization Environment (CAVE) bằng [Amazon AppStream 2.0](https://aws.amazon.com/pm/appstream2/)\-một dịch vụ truyền phát ứng dụng được quản lý, cho phép người dùng truyền phát các ứng dụng desktop từ Amazon Web Services (AWS) đến bất kỳ thiết bị nào mà không cần phần cứng hay phần mềm bổ sung.
 
-Giải pháp này đại diện cho những gì tôi sẽ coi là một lần lặp nước rút hợp lý khác từ last post của tôi. Phạm vi vẫn được giới hạn trong việc nhập và phân tích cú pháp đơn giản của các **HL7v2 messages** được định dạng theo **Quy tắc mã hóa 7 (ER7)** thông qua giao diện REST.
+## **Lợi ích khi chạy các ứng dụng đồ họa chuyên sâu bằng Amazon AppStream 2.0**
 
-**Kiến trúc giải pháp bây giờ như sau:**
+AppStream 2.0 mang lại nhiều lợi ích. Với dịch vụ truyền phát này:
 
-> _Hình 1. Kiến trúc tổng thể; những ô màu thể hiện những dịch vụ riêng biệt._
+* Người dùng có thể truy cập các ứng dụng desktop từ bất kỳ thiết bị được hỗ trợ nào, bao gồm laptop, máy tính để bàn, máy tính bảng và điện thoại. Điều này mang lại sự linh hoạt và tính di động, giúp nhân viên duy trì năng suất dù ở văn phòng, làm việc tại nhà hay đang di chuyển.  
+* Bạn có thể dễ dàng tăng hoặc giảm dung lượng GPU theo nhu cầu. Điều này giúp tối ưu chi phí bằng cách chỉ trả tiền cho những gì bạn sử dụng, loại bỏ nhu cầu duy trì phần cứng đắt tiền có thể bị nhàn rỗi trong giờ thấp điểm.  
+* Bạn không cần cấp thừa nguồn lực GPU, điều đặc biệt giá trị đối với các tổ chức có khối lượng công việc biến động hoặc theo mùa.  
+* Người dùng có thể truy cập các ứng dụng tăng tốc GPU từ bất kỳ thiết bị nào, bao gồm thiết bị di động. Điều này mang lại sự linh hoạt hơn so với việc gắn ứng dụng với các desktop cụ thể, và cung cấp hiệu năng nhất quán bất kể khả năng của thiết bị người dùng cuối.  
+* AppStream 2.0 xử lý các phức tạp của việc quản lý driver GPU, các đội máy (fleet) hỗ trợ GPU và các stack ứng dụng tối ưu cho GPU. Điều này giảm gánh nặng quản trị cho đội ngũ IT, giúp họ tập trung vào các sáng kiến chiến lược thay vì bảo trì định kỳ và xử lý sự cố.  
+* GPU được cung cấp theo mô hình trả tiền theo mức sử dụng (pay-as-you-go) trong AppStream 2.0, loại bỏ chi phí đầu tư ban đầu cao để mua và bảo trì máy chủ GPU vật lý. Điều này giúp giải pháp trở nên phải chăng hơn đối với nhiều tổ chức, đặc biệt là những đơn vị mới bắt đầu hoặc muốn mở rộng năng lực đồ họa mà không cần chi tiêu vốn lớn.  
+* AppStream 2.0 cung cấp các loại phiên bản tối ưu cho khối lượng công việc đồ họa như Graphics G4dn và Graphics G5 sử dụng GPU NVIDIA. Điều này mang lại hiệu năng cao cho các tác vụ như mô hình 3D và biên tập video, đồng thời cho phép bạn chọn loại phiên bản phù hợp nhất với yêu cầu ứng dụng và nhu cầu người dùng cụ thể.  
+* Khối lượng công việc GPU và dữ liệu của bạn không bao giờ lưu trú trên thiết bị người dùng cuối và được cô lập trong Đám mây AWS. Điều này tăng cường bảo mật và tuân thủ cho các ứng dụng nhạy cảm, đồng thời cung cấp khả năng kiểm soát tập trung đối với quyền truy cập dữ liệu và giảm rủi ro mất mát tài sản trí tuệ do thiết bị cục bộ bị xâm phạm.
 
----
+![image2](/images/3-BlogsTranslated/07.png) 
+Hình 1\. Trực quan hóa AWIPS CAVE về Bão Lee ngày 13/9/2023 sử dụng Amazon AppStream 2.0.
 
-Mặc dù thuật ngữ _microservices_ có một số sự mơ hồ cố hữu, một số đặc điểm là chung:
+## **Khám phá giải pháp AWIPS**
 
-- Chúng nhỏ, tự chủ, kết hợp rời rạc
-- Có thể tái sử dụng, giao tiếp thông qua giao diện được xác định rõ
-- Chuyên biệt để giải quyết một việc
-- Thường được triển khai trong **event-driven architecture**
+Trạm làm việc AWIPS CAVE là giao diện chính mà các nhà dự báo sử dụng. AWIPS CAVE có các yêu cầu hệ thống sau:
 
-Khi xác định vị trí tạo ranh giới giữa các microservices, cần cân nhắc:
+* Thiết bị tương thích OpenGL 2.0  
+* Tối thiểu 4GB RAM  
+* Tối thiểu 2GB dung lượng đĩa cho bộ nhớ đệm  
+* Card đồ họa NVIDIA  
+* Driver NVIDIA mới nhất
 
-- **Nội tại**: công nghệ được sử dụng, hiệu suất, độ tin cậy, khả năng mở rộng
-- **Bên ngoài**: chức năng phụ thuộc, tần suất thay đổi, khả năng tái sử dụng
-- **Con người**: quyền sở hữu nhóm, quản lý _cognitive load_
+Để cấu hình ứng dụng AWIPS cho Amazon AppStream 2.0, bạn sẽ thực hiện các bước sau:
 
----
+### **Tạo Image dựa trên Linux**
 
-## Lựa chọn công nghệ và phạm vi giao tiếp
+Trước tiên, chúng ta sẽ chuẩn bị môi trường Linux nền tảng và cài đặt AWIPS CAVE cùng các phụ thuộc của nó. Điều này tạo nền tảng cho ứng dụng truyền phát của chúng ta.
 
-| Phạm vi giao tiếp                        | Các công nghệ / mô hình cần xem xét                                                        |
-| ---------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Trong một microservice                   | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Giữa các microservices trong một dịch vụ | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Giữa các dịch vụ                         | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
+![image3](/images/3-BlogsTranslated/08.png)
 
----
+### **Tạo Manifest Tối ưu hóa Ứng dụng**
 
-## The pub/sub hub
+Amazon AppStream 2.0 sử dụng các tệp manifest để tối ưu hiệu năng truyền phát ứng dụng bằng cách nạp trước các tệp cần thiết. Script này giúp xác định tất cả các tệp mà CAVE cần trong thời gian chạy.
 
-Việc sử dụng kiến trúc **hub-and-spoke** (hay message broker) hoạt động tốt với một số lượng nhỏ các microservices liên quan chặt chẽ.
+![image4](/images/3-BlogsTranslated/09.png)
 
-- Mỗi microservice chỉ phụ thuộc vào _hub_
-- Kết nối giữa các microservice chỉ giới hạn ở nội dung của message được xuất
-- Giảm số lượng synchronous calls vì pub/sub là _push_ không đồng bộ một chiều
+### **Thêm Ứng dụng vào Danh mục Amazon AppStream**
 
-Nhược điểm: cần **phối hợp và giám sát** để tránh microservice xử lý nhầm message.
+Đăng ký CAVE trong danh mục ứng dụng Amazon AppStream, xác định đường dẫn khởi chạy, tên hiển thị và tệp manifest tối ưu hóa mà chúng ta đã tạo.
 
----
+![image5](/images/3-BlogsTranslated/10.png)
 
-## Core microservice
+### **Cấu hình Fleet**
 
-Cung cấp dữ liệu nền tảng và lớp truyền thông, gồm:
+Tạo một fleet để quản lý các phiên bản sẽ chạy ứng dụng truyền phát của bạn. Chọn giữa cấu hình on-demand (tiết kiệm chi phí) hoặc always-on (sẵn sàng tức thì).
 
-- **Amazon S3** bucket cho dữ liệu
-- **Amazon DynamoDB** cho danh mục dữ liệu
-- **AWS Lambda** để ghi message vào data lake và danh mục
-- **Amazon SNS** topic làm _hub_
-- **Amazon S3** bucket cho artifacts như mã Lambda
+* Khuyến nghị chọn Graphics G4dn (stream.graphics.g4dn.xlarge) hoặc Graphics Pro (stream.graphics-pro.4xlarge)  
+* Chọn loại fleet “On-demand”  
+* Đặt các giới hạn dung lượng mong muốn
 
-> Chỉ cho phép truy cập ghi gián tiếp vào data lake qua hàm Lambda → đảm bảo nhất quán.
+### 
 
----
+### 
 
-## Front door microservice
+### 
 
-- Cung cấp API Gateway để tương tác REST bên ngoài
-- Xác thực & ủy quyền dựa trên **OIDC** thông qua **Amazon Cognito**
-- Cơ chế _deduplication_ tự quản lý bằng DynamoDB thay vì SNS FIFO vì:
-  1. SNS deduplication TTL chỉ 5 phút
-  2. SNS FIFO yêu cầu SQS FIFO
-  3. Chủ động báo cho sender biết message là bản sao
+### **Tạo Image**
 
----
+Tạo image Amazon AppStream cuối cùng sẽ được dùng để khởi chạy các phiên truyền phát. Quá trình này chụp lại tất cả ứng dụng và cấu hình đã cài đặt.
 
-## Staging ER7 microservice
+![image6](/images/3-BlogsTranslated/11.png)
 
-- Lambda “trigger” đăng ký với pub/sub hub, lọc message theo attribute
-- Step Functions Express Workflow để chuyển ER7 → JSON
-- Hai Lambda:
-  1. Sửa format ER7 (newline, carriage return)
-  2. Parsing logic
-- Kết quả hoặc lỗi được đẩy lại vào pub/sub hub
+### **Cấu hình Xác thực Người dùng**
 
----
+Chọn giữa việc quản lý người dùng trực tiếp trong Amazon AppStream hoặc tích hợp với nhà cung cấp danh tính hiện có của bạn.
 
-## Tính năng mới trong giải pháp
+* Cấu hình xác thực Amazon Cognito User Pool  
+* Tích hợp Môi trường Amazon AppStream với AWS Identity Center.
 
-### 1. AWS CloudFormation cross-stack references
+Hình sau mô tả kiến trúc cấp cao của giải pháp.
 
-Ví dụ _outputs_ trong core microservice:
+![image7](/images/3-BlogsTranslated/12.png)
 
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
-```
+Hình 2\. Sơ đồ kiến trúc của giải pháp mô tả trong bài. Các thành phần chính của giải pháp gồm Amazon AppStream 2.0, Amazon S3, Amazon EFS, Amazon Aurora, và Amazon EC2.
+
+## **Các trường hợp sử dụng AWIPS ngoài hiện trường**
+
+Các Trung tâm Dự báo Sông (RFC) của NWS sử dụng AWIPS CAVE để giám sát và dự đoán mực nước sông, suối, phát hành cảnh báo lũ, và cung cấp thông tin về nguồn nước và điều kiện hạn hán. Các Văn phòng Dự báo Thời tiết (WFO) dựa vào AWIPS CAVE để cung cấp cho công chúng các dự báo thời tiết địa phương, cảnh báo và khuyến cáo. Các văn phòng này cũng sử dụng AWIPS CAVE để phối hợp với các WFO khác, các cơ quan liên bang và tiểu bang, cũng như các đối tác khu vực tư nhân. Trung tâm Bão Quốc gia NWS (NHC) sử dụng AWIPS CAVE để theo dõi và dự báo xoáy thuận nhiệt đới, bao gồm bão và áp thấp nhiệt đới. AWIPS CAVE hỗ trợ NHC trong việc cung cấp thông tin kịp thời và chính xác cho công chúng, các quan chức quản lý khẩn cấp và các bên liên quan khác. Ngoài ra, một số trường đại học và viện nghiên cứu tập trung vào khí tượng và khoa học khí quyển cũng sử dụng AWIPS CAVE cho mục đích nghiên cứu, giảng dạy và đào tạo.
+
+## **Kết luận**
+
+Việc tích hợp AWIPS CAVE với Amazon AppStream 2.0 đại diện cho một bước tiến đáng kể trong công nghệ và khả năng tiếp cận của dự báo thời tiết. Giải pháp này đáp ứng nhu cầu ngày càng tăng về truy cập từ xa tới các ứng dụng trọng yếu trong lĩnh vực khí tượng, đồng thời mang lại nhiều lợi ích về tính linh hoạt, hiệu quả chi phí và hiệu năng.
+
+Bằng cách tận dụng sức mạnh của điện toán đám mây và tăng tốc GPU, các nhà khí tượng và nhà nghiên cứu hiện có thể truy cập các công cụ phân tích thời tiết tinh vi từ bất kỳ đâu, trên bất kỳ thiết bị nào. Điều này không chỉ nâng cao khả năng cung cấp các dự báo chính xác và kịp thời mà còn cải thiện hiệu quả tổng thể của các dịch vụ thời tiết.
+
+Khi chúng ta tiếp tục đối mặt với các mô hình thời tiết ngày càng phức tạp và thách thức khí hậu, những đổi mới công nghệ như vậy sẽ đóng vai trò then chốt trong việc hỗ trợ công việc của các nhà khí tượng và cuối cùng là góp phần vào an toàn, sẵn sàng của cộng đồng.
+
+**Về tác giả**
+| :---- | :---- |
+| ![image8](/images/3-BlogsTranslated/13.jpg) | **Rayette Toles-Abdullah** Rayette là kiến trúc sư giải pháp chính trong đội Worldwide Public Sector Federal Civilian tại AWS. Rayette là một chuyên gia công nghệ với hơn 23 năm kinh nghiệm, chuyên về tích hợp hệ thống, hiện đại hóa ứng dụng, và triển khai các giải pháp công nghệ tác động cao để giải quyết nhu cầu kinh doanh và nhiệm vụ. |
+| ![image9](/images/3-BlogsTranslated/14.png) | **Austin Park** Austin là kiến trúc sư giải pháp trong đội Worldwide Public Sector Federal Civilian tại AWS. Austin là một chuyên gia công nghệ với hơn 2 năm kinh nghiệm, chuyên về hệ thống lưu trữ. Austin đam mê hỗ trợ khách hàng AWS trên hành trình lên đám mây. |
+| ![image10](/images/3-BlogsTranslated/15.jpg) | **Chris Quarcoo** Chris là kiến trúc sư giải pháp trong đội Worldwide Public Sector tại AWS, với hơn 4 năm kinh nghiệm trong ngành CNTT. Chuyên về vận hành đám mây và công nghệ container, anh thiết kế và triển khai các giải pháp đám mây cho các tổ chức chính phủ và khu vực công. Chris tận dụng công nghệ AWS để giúp khách hàng hiện đại hóa hạ tầng CNTT, nâng cao chất lượng dịch vụ, và đạt được các mục tiêu nhiệm vụ trọng yếu trong khu vực công. |
