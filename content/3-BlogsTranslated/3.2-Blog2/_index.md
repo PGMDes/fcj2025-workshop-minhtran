@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 3.2. </b> "
 ---
 
-# Improving Weather Forecast Accuracy with GPU-Accelerated Amazon AppStream 2.0 Instances
+# **Improving Weather Forecast Accuracy with GPU-Accelerated Amazon AppStream 2.0 Instances**
 
 *By Rayette Toles-Abdullah, Austin Park, and Chris Quarcoo | May 13, 2025 | related: [Amazon AppStream 2.0](https://aws.amazon.com/pm/appstream2/), [Best Practices](https://aws.amazon.com/blogs/publicsector/category/post-types/best-practices/), [Customer Solutions](https://aws.amazon.com/blogs/publicsector/category/post-types/customer-solutions/), [Public Sector](https://aws.amazon.com/blogs/publicsector/category/public-sector/)*
 

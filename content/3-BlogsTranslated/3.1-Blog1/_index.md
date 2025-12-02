@@ -5,7 +5,7 @@ weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-# New capabilities in Amazon SageMaker AI continue to transform how organizations develop AI models
+# **New capabilities in Amazon SageMaker AI continue to transform how organizations develop AI models**
 
 *By Ankur Mehrotra | July 10, 2025 | related: [Amazon Bedrock](https://aws.amazon.com/blogs/machine-learning/category/artificial-intelligence/amazon-machine-learning/amazon-bedrock/), [Amazon SageMaker AI](https://aws.amazon.com/blogs/machine-learning/category/artificial-intelligence/sagemaker/amazon-sagemaker-ai/), [Amazon SageMaker HyperPod](https://aws.amazon.com/blogs/machine-learning/category/artificial-intelligence/sagemaker/amazon-sagemaker-hyperpod/), [Amazon SageMaker JumpStart](https://aws.amazon.com/blogs/machine-learning/category/artificial-intelligence/sagemaker/amazon-sagemaker-jumpstart/), [Announcements](https://aws.amazon.com/blogs/machine-learning/category/post-types/announcements/)*
 
