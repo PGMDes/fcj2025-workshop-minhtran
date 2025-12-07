@@ -33,13 +33,18 @@ The company provides an internship allowance and offers flexible working hours w
 ### Additional Questions
 
 - What did you find **most satisfying** during your internship?
+  - What I liked most was being able to go to the office, sit in the air-conditioned room, and work.
 - What do you think the company **should improve** for future interns?
+  - It's easy to go out to use the restroom, but getting back in can be difficult — sometimes the door is locked from the outside.
 - If recommending to a friend, would you **suggest they intern here**? Why or why not?
+  - I would definitely recommend it to my friends, because not only is the working environment very professional, but it's also convenient for going out in District 1.
 
 ---
 
 ### Suggestions & Expectations
 
 - Do you have any suggestions to improve the internship experience?
+  - I have no ideas yet.
 - Would you like to continue this program in the future?
+  - Yes, of course I would. I still want to challenge myself with this internship.
 - Any other comments (free sharing):

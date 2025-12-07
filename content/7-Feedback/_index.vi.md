@@ -42,5 +42,5 @@ Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về t
 - Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?
   - Em chưa có ý tưởng gì ạ.
 - Bạn có muốn tiếp tục chương trình này trong tương lai?
-  - Có chứ, mình vẫn muốn tiếp tục thử sức với chương tình này.
+  - Có chứ, mình vẫn muốn tiếp tục thử sức với chương trình này.
 - Góp ý khác (tự do chia sẻ):
