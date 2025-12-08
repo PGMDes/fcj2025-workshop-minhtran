@@ -7,7 +7,7 @@ pre: " <b> 6. </b> "
 ---
 
 During my internship at **AWS/First cloud journey program** from **12/08/2025** to **12/12/2025**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
-I participated in **in learning AWS services, as well as applying learned knowledge into a group project with a FinTech theme**, through which I improved my skills in **data collection, data analysis, reporting and communication.**.
+I participated in **in learning AWS services, as well as applying learned knowledge into a group project with a FinTech theme**, through which I improved my skills in **data collection, data analysis, reporting and communication**.
 
 In terms of work ethic, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues to improve work efficiency.
 
