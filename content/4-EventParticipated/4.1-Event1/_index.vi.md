@@ -7,7 +7,7 @@ pre: " <b> 4.1. </b> "
 
 ---
 
-# Bài thu hoạch “Vietnam Cloud Day 2025: Ho Chi Minh City Connect Edition for Builders (Track 2: Migration & Modernization)”
+# Vietnam Cloud Day 2025: Ho Chi Minh City Connect Edition for Builders
 
 ### Mục Đích Của Sự Kiện
 
@@ -358,11 +358,6 @@ Giảm thiểu gián đoạn, bảo toàn tính toàn vẹn của ứng dụng v
 - **Platform/IDP** là đòn bẩy quy mô; **security-by-default** không thể thiếu.
 - **Human-in-the-loop** đảm bảo an toàn khi tự động hóa diện rộng.
 
+> Hơn 400 nhà phát triển công nghệ đầy nhiệt huyết tại Thành phố Hồ Chí Minh, văn phòng AWS (Tầng 36) đã tụ họp để theo dõi phiên họp toàn thể trực tiếp từ Hà Nội, cùng chia sẻ sự phấn khích và kiến ​​thức về AWS Cloud Day Vietnam 2025
 
-#### Một số hình ảnh khi tham gia sự kiện
-
-<img src="/images/4-EventParticipated/4.1-Event1/event aws.jpg" alt="VietNam Cloud Day 2025" width="2000"/>
-  
-  > Hơn 400 nhà phát triển công nghệ đầy nhiệt huyết tại Thành phố Hồ Chí Minh, văn phòng AWS (Tầng 36) đã tụ họp để theo dõi phiên họp toàn thể trực tiếp từ Hà Nội, cùng chia sẻ sự phấn khích và kiến ​​thức về AWS Cloud Day Vietnam 2025
-
-  > Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team. 
+> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team. 

@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.4. </b> "
 ---
 
-# Bài thu hoạch “AWS Cloud Mastery Series #1: GENERATIVE AI, RAG & AWS AGENTIC AI”
+# AWS Cloud Mastery Series #1: GENERATIVE AI, RAG & AWS AGENTIC AI
 
 ### Mục Đích Của Sự Kiện
 

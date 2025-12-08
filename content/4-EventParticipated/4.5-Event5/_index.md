@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.5. </b> "
 ---
 
-# Summary Report: "AWS Cloud Mastery Series #2: From DevOps, IaC to Container & Observability"
+# AWS Cloud Mastery Series #2: From DevOps, IaC to Container & Observability
 
 ### Event Purpose
 

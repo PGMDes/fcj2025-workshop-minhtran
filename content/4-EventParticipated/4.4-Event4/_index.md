@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.4. </b> "
 ---
 
-# Summary Report: "AWS Cloud Mastery Series #1: GENERATIVE AI, RAG & AWS AGENTIC AI"
+# AWS Cloud Mastery Series #1: GENERATIVE AI, RAG & AWS AGENTIC AI
 
 ### Event Purpose
 

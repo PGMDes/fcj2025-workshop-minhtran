@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Learning Notes from "AI-Driven Development Lifecycle: Reinventing Software Engineering"
+# AI-Driven Development Lifecycle: Reinventing Software Engineering
 
 ### Event Objectives
 

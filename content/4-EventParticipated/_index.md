@@ -10,7 +10,7 @@ During my internship, I participated in two events. Each one was a memorable exp
 
 ### [Event 1](4.1-Event1/)
 
-&emsp;**Event Name:** Vietnam Cloud Day 2025 - Ho Chi Minh City Connect Edition for Builders (Track 1: GenAI & Data)
+&emsp;**Event Name:** Vietnam Cloud Day 2025 - Ho Chi Minh City Connect Edition for Builders
 
 &emsp;**Date & Time:** 09:00, September 18, 2025
 
@@ -40,7 +40,7 @@ During my internship, I participated in two events. Each one was a memorable exp
 
 &emsp;**Location:** FPT University, D1 Street, High-Tech Park, Tang Nhon Phu Ward, Ho Chi Minh City.
 
-&emsp;**Role in the event:** Attendees
+&emsp;**Role in the event:** Attendee
 
 ---
 
@@ -52,7 +52,7 @@ During my internship, I participated in two events. Each one was a memorable exp
 
 &emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City
 
-&emsp;**Role in the event:** Attendees
+&emsp;**Role in the event:** Attendee
 
 ---
 
@@ -64,7 +64,7 @@ During my internship, I participated in two events. Each one was a memorable exp
 
 &emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City
 
-&emsp;**Role in the event:** Attendees
+&emsp;**Role in the event:** Attendee
 
 ---
 
@@ -76,4 +76,4 @@ During my internship, I participated in two events. Each one was a memorable exp
 
 &emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City
 
-&emsp;**Role in the event:** Attendees
+&emsp;**Role in the event:** Attendee

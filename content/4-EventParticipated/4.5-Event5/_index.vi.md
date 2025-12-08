@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.5. </b> "
 ---
 
-# Bài thu hoạch: “AWS Cloud Mastery Series #2: Từ DevOps, IaC đến Container & Observability”
+# AWS Cloud Mastery Series #2: Từ DevOps, IaC đến Container & Observability
 
 ### Mục Đích Của Sự Kiện
 

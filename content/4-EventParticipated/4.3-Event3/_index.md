@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.3. </b> "
 ---
 
-# Summary Report: WORKSHOP "DATA SCIENCE ON AWS PLATFORM"
+# WORKSHOP "DATA SCIENCE ON AWS PLATFORM"
 
 ### Event Objectives
 

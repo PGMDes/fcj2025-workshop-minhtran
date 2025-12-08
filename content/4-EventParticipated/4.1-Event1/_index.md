@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# Summary Report: “Vietnam Cloud Day 2025: Ho Chi Minh City Connect Edition for Builders (Track 2: Migration & Modernization)”
+# Vietnam Cloud Day 2025: Ho Chi Minh City Connect Edition for Builders
 
 ### Event Objectives
 
@@ -388,10 +388,6 @@ REFACTOR: Modern Application
 
 - **Human-in-the-loop** ensures safety for broad automation.
 
-#### Some photos from the event
-
-<img src="/images/4-EventParticipated/4.1-Event1/event aws.jpg" alt="VietNam Cloud Day 2025" width="2000"/>
-
-> Over 400 passionate technology developers in Thành phố Hồ Chí Minh gathered at the AWS office (36th Floor) to watch the live plenary session from Hà Nội, sharing the excitement and knowledge about AWS Cloud Day Vietnam 2025
+> Over 400 passionate technology developers in Ho Chi Minh City gathered at the AWS office (36th Floor) to watch the live plenary session from Ha Noi, sharing the excitement and knowledge about AWS Cloud Day Vietnam 2025
 
 > Overall, the event not only provided technical knowledge but also changed my mindset about application design, system modernization, and more effective cross-team collaboration.

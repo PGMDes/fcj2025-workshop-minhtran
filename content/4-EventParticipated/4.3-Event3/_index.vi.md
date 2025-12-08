@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.3. </b> "
 ---
 
-# Bài thu hoạch: WORKSHOP “KHOA HỌC DỮ LIỆU TRÊN NỀN TẢNG AWS”
+# WORKSHOP “KHOA HỌC DỮ LIỆU TRÊN NỀN TẢNG AWS”
 
 ### Mục Đích Của Sự Kiện
 

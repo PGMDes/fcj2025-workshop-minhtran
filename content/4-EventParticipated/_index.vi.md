@@ -10,7 +10,7 @@ Trong suốt kỳ thực tập, em đã có cơ hội tham dự 6 sự kiện ch
 
 ### [Event 1](4.1-Event1/)
 
-&emsp;**Tên sự kiện:** Vietnam Cloud Day 2025 - Ho Chi Minh City Connect Edition for Builders (Track 1: GenAI & Data)
+&emsp;**Tên sự kiện:** Vietnam Cloud Day 2025 - Ho Chi Minh City Connect Edition for Builders
 
 &emsp;**Thời gian:** 09:00 ngày 18/09/2025
 

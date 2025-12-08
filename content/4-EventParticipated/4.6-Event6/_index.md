@@ -5,7 +5,7 @@ weight: 6
 chapter: false
 pre: " <b> 4.6. </b> "
 ---
-# Report: “AWS Cloud Mastery Series #3”
+# AWS Cloud Mastery Series #3
 
 ### Purpose of the Series
 

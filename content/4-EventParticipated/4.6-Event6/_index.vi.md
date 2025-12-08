@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.6. </b> "
 ---
 
-# Bài thu hoạch: “AWS Cloud Mastery Series #3”
+# AWS Cloud Mastery Series #3
 
 ### Mục Đích Của Chuỗi Chuyên Đề
 

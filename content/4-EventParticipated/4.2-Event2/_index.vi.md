@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Bài thu hoạch “Vòng đời phát triển theo hướng AI: Tái định hình kỹ thuật phần mềm”
+# Vòng đời phát triển theo hướng AI: Tái định hình kỹ thuật phần mềm
 
 ### Mục Đích Của Sự Kiện
 
