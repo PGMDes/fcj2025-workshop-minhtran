@@ -14,13 +14,13 @@ pre: " <b> 1.1. </b> "
 
 ### Tasks to be carried out this week:
 
-| Day 	| Task 	| Start Date 	| Completion Date 	| Reference Material 	|
-|---	|---	|---	|---	|---	|
-| 2 	| - Read carefully the notes, rules, and regulations at AWS<br>- Connect and interact with team members<br>- Form groups and plan study schedules as well as project timing needed for the internship at the company.<br>- Create a Google Sheet to manage study activities and track the progress of team members. 	| 08/09/2025 	| 08/09/2025 	|  [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md) 	|
-| 3 	| - Learn about the basic concepts:<br>  + Understand what cloud computing is.<br>  + What are the benefits of using cloud computing?<br>  + What makes AWS different.<br>  + How to start a cloud journey? 	| 09/09/2025 	| 09/09/2025 	| [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md)	|
-| 4 	| - Learn about AWS global infrastructure.<br>- Learn about AWS Services Management tools.<br>- How to optimize costs on AWS.<br>- Practice Lab 01:<br>  + Create an AWS account.<br>  + Set up MFA for the account and understand what MFA is.<br>  + Create Admin Group and Admin User.<br>  + Experiment with AWS Support. 	| 10/09/2025 	| 10/09/2025 	| [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md)	|
-| 5 	| - Practice Lab 07:<br>  + Create Budget<br>  + Create Cost Budget<br>  + Create Usage Budget<br>  + Create RI Budget<br>  + Create Saving Plan Budget<br>  + How to delete resources.<br>- Learn about the services of each Budget<br>- And identify which Budgets are suitable for which users. 	| 11/09/2025 	| 11/09/2025 	| [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md) 	|
-| 6 	| - Practice Lab 09:<br>  + Learn about AWS Support packages<br>  + Access AWS Support<br>  + Initiate support requests. 	| 12/09/2025 	| 12/09/2025 	| [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md) 	|
+| Day | Task | Start Date | End Date | Resources & Notes |
+|---|---|---|---|---|
+| Mon | - Review AWS rules & regulations.<br>- Team networking & grouping.<br>- Plan study roadmap & internship project.<br>- Create a progress tracking sheet. | 08/09/2025 | 08/09/2025 | [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md) |
+| Tue | - Understand Cloud Computing concepts & benefits.<br>- AWS differentiators.<br>- The Cloud adoption journey. | 09/09/2025 | 09/09/2025 | [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md) |
+| Wed | - Study AWS Global Infrastructure & Management Tools.<br>- Cost optimization strategies.<br>- **Lab 01:** Create Account, setup MFA, create Admin Group/User, test AWS Support. | 10/09/2025 | 10/09/2025 | [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md) |
+| Thu | - **Lab 07:** Create Budgets (Cost, Usage, RI, Savings Plan).<br>- Resource termination.<br>- Budget types & use cases. | 11/09/2025 | 11/09/2025 | [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md) |
+| Fri | - **Lab 09:** Explore AWS Support plans.<br>- Access Support Center & open support cases. | 12/09/2025 | 12/09/2025 | [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md) |
 
 ### Week 1 Achievements:
 

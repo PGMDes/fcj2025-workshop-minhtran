@@ -13,13 +13,13 @@ pre: " <b> 1.1. </b> "
 - Hoàn thành bài Lab cũng như kiến thức của Module 1 trong FJC 2025
 ### Các công việc cần triển khai trong tuần này:
 
-| Thứ 	| Công việc 	| Ngày bắt đầu 	| Ngày kết thúc 	| Nguồn tài liệu và ghi chú học tập 	|
-|---	|---	|---	|---	|---	|
-| 2 	| - Đọc kĩ các lưu ý, nội quy và quy định tại AWS<br>- Kết nối và giao lưu với các thành viên trong team<br>- Lập nhóm và lên kế hoạch học tập cũng như về timing của dự án cần chuẩn bị trong kì thực tập tại doanh nghiệp.<br>- Tạo google sheet để quản lí việc học tập và cũng như theo dõi tiến độ của thành viên trong team. 	| 08/09/2025 	| 08/09/2025 	| [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md) 	|
-| 3 	| - Tìm hiểu về các khái niệm cơ bản:<br>  + Hiểu về điện toán đám mây là gì?<br>  + Lợi ích của việc sử dụng điện toán đám mây là gì?.<br>  + Điều gì tạo nên sự khác biệt của AWS.<br>  + Làm sao để bắt đầu một hành trình lên mây? 	| 09/09/2025 	| 09/09/2025 	| [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md)	|
-| 4 	| - Tìm hiểu về hạ tầng toàn cầu của AWS.<br>- Tìm hiểu về công cụ Quản Lý AWS Services.<br>- Cách tối ưu hóa chi phí trên AWS.<br>- Thực hành Lab 01:<br>  + Tạo AWS account.<br>  + Cài MFA cho tài khoản cũng như hiểu về MFA là gì?<br>  + Tạo Admin Group và Admin User.<br>  + Thử nghiệm dùng AWS Support. 	| 10/09/2025 	| 10/09/2025 	| [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md)	|
-| 5 	| - Thực hành Lab 07:<br>  + Tạo Budget<br>  + Tạo Cost Budget<br>  + Tạo Usage Budget<br>  + Tạo RI Budget<br>  + Tạo Saving Plan Budget<br>  + Cách xóa tài nguyên.<br>- Tìm hiểu về các dịch vụ của từng Budget<br>- Và nhận biết những Budget nào phù hợp với đối tượng nào. 	| 11/09/2025 	| 11/09/2025 	| [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md)	|
-| 6 	| - Thực hành Lab 09:<br>  + Tìm hiểu các gói hỗ trợ của AWS Support<br>  + Truy cập AWS Support<br>  + Khởi tạo các yêu cầu hỗ trợ. 	| 12/09/2025 	| 12/09/2025 	| [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md) 	|
+| Thứ | Công việc | Ngày bắt đầu | Ngày kết thúc | Nguồn tài liệu và ghi chú học tập |
+|---|---|---|---|---|
+| 2 | - Đọc nội quy, quy định AWS.<br>- Kết nối team, lập nhóm.<br>- Lên kế hoạch học tập và dự án thực tập.<br>- Tạo Google Sheet quản lý tiến độ. | 08/09/2025 | 08/09/2025 | [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md) |
+| 3 | - Tìm hiểu khái niệm & lợi ích Cloud Computing.<br>- Điểm khác biệt của AWS.<br>- Lộ trình Cloud Journey. | 09/09/2025 | 09/09/2025 | [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md) |
+| 4 | - Tìm hiểu AWS Global Infrastructure & Management Tools.<br>- Tối ưu hóa chi phí AWS.<br>- **Lab 01:** Tạo Account, cài đặt MFA, tạo Admin Group/User, dùng AWS Support. | 10/09/2025 | 10/09/2025 | [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md) |
+| 5 | - **Lab 07:** Tạo các loại Budget (Cost, Usage, RI, Saving Plan).<br>- Cách xóa tài nguyên.<br>- Phân loại và ứng dụng Budget phù hợp. | 11/09/2025 | 11/09/2025 | [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md) |
+| 6 | - **Lab 09:** Tìm hiểu các gói AWS Support.<br>- Truy cập và khởi tạo yêu cầu hỗ trợ (Support Case). | 12/09/2025 | 12/09/2025 | [Module 01](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module1/note.md) |
 
 ### Kết quả đạt được tuần 1:
 
