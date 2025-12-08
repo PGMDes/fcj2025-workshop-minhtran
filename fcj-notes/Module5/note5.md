@@ -22,9 +22,6 @@ Lưu ý: AWS cung cấp công cụ hỗ trợ; trách nhiệm của khách hàng
 - PaaS (Platform as a Service): trách nhiệm chia sẻ (ví dụ: RDS — AWS quản lý OS patching, khách hàng quản lý schema/data).
 - SaaS (Software as a Service): AWS chịu nhiều trách nhiệm; khách hàng quản lý dữ liệu và quyền truy cập (ví dụ: S3, DynamoDB).
 
-Hình minh họa:  
-https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Image_module_05/Module_05_1_Share_Responsibility_Model.png
-
 ---
 
 ## II. AWS Identity and Access Management (IAM)
@@ -46,9 +43,6 @@ Quản trị định danh và quyền truy cập trong AWS.
 - Các thực thể (principals) có thể thao tác trên AWS:
   - Root user, IAM user, IAM role, federated users, AWS services.
 
-Hình minh họa:  
-https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Image_module_05/Module_05_2_IAM_User.png
-
 ### 3. IAM Policy
 - Chính sách định nghĩa quyền (JSON).
 - Phân loại:
@@ -58,8 +52,6 @@ https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Mod
   - Mặc định là Deny.
   - Explicit Deny luôn thắng Allow.
 
-Hình minh họa:  
-https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Image_module_05/Module_05_3_IAM_Policy.png
 
 ### 4. IAM Role
 - Role: thực thể có tập quyền cụ thể, không gắn với user cố định, không có credentials lâu dài.
@@ -70,9 +62,6 @@ https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Mod
   - Cross-account access.
   - Federated users (Google, Facebook, AD).
 - Có thể áp dụng điều kiện (time/IP) để tăng bảo mật.
-
-Hình minh họa:  
-https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Image_module_05/Module_05_5_IAM_Role_for_EC2.png
 
 ---
 
@@ -87,8 +76,6 @@ Dịch vụ định danh cho ứng dụng Web/Mobile, giúp quản lý user sign
   - Trao đổi token từ User Pool hoặc social provider để lấy AWS temporary credentials.
   - Cho phép user truy cập trực tiếp dịch vụ AWS (ví dụ: upload lên S3) dựa trên IAM Role được cấu hình.
 
-Hình minh họa:  
-https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Image_module_05/Module_05_9_Amazon_Cognito_User_Pool_and_Identity_Pool.png
 
 ---
 
@@ -134,9 +121,6 @@ Trung tâm kiểm soát an ninh cho tài khoản AWS.
 - Tự động kiểm tra cấu hình so với các tiêu chuẩn ngành (PCI DSS, CIS AWS Foundations Benchmark,...).
 - Tổng hợp cảnh báo bảo mật từ GuardDuty, Inspector, Macie, v.v.
 - Cung cấp Security Score để đánh giá tổng quan.
-
-Hình minh họa:  
-https://github.com/DazielNguyen/aws-fcj-report/blob/main/TAKE_NOTES_%26_LABS/Module_05/Image_module_05/Module_05_13_AWS_Security_Hub.png
 
 ---
 
