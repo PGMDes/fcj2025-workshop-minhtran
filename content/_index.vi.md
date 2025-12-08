@@ -27,7 +27,7 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 12/08/2025 đến ngày 12/12/2025
 
-<img src="/images/avatar_new_01.jpg" alt="Your profile picture" width="450"/>
+<img src="/images/avatar_new_02.jpg" alt="Your profile picture" width="450"/>
 
 ### Nội dung báo cáo
 
