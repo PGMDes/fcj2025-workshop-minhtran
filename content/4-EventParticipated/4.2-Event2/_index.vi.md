@@ -1,213 +1,200 @@
 ---
 title: "Event 2"
-date: "2025-09-09"
-weight: 1
+date: "2025-10-03"
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Bài thu hoạch “WORKSHOP KHOA HỌC DỮ LIỆU TRÊN AWS”
+# Bài thu hoạch “Vòng đời phát triển theo hướng AI: Tái định hình kỹ thuật phần mềm”
 
 ### Mục Đích Của Sự Kiện
 
-- Chia sẻ các dịch vụ AI trên AWS
-- Hướng dẫn triển khai mô hình AI thông qua Amazon SageMaker
-- Chia sẻ cách deploy mô hình AI và truy cập thông qua API
+- Hiểu rõ cách AI có thể **tự động hóa và tối ưu hóa** từng giai đoạn trong vòng đời phát triển phần mềm (Software Development Lifecycle – SDLC).
+- Nắm bắt được triết lý **AI hỗ trợ con người thay vì thay thế con người** trong quá trình xây dựng ứng dụng.
+- Trực tiếp quan sát cách **Amazon Q** và các công cụ AI khác hỗ trợ lập trình viên từ giai đoạn khởi tạo ý tưởng, viết mã, đến triển khai hạ tầng (IaC – Infrastructure as Code).
+- Nhận thức được xu hướng “**AI-first development**” – nơi AI trở thành một phần tự nhiên của quy trình phát triển phần mềm tương lai.
 
 ### Danh Sách Diễn Giả
 
-- **Văn Hoàng Kha** - Cloud Solutions Architec AWS User Group Leader
-- **Bạch Doãn Vương** - Cloud Develops Engineer AWS Community Builder
+- **Anh Toan Huynh** - PMP, Senior Solutions Architect, AWS
+- **Chị My Nguyen** - Senior Solutions Architect, AWS
 
 ### Nội Dung Nổi Bật
 
-#### **Giới thiệu & Tầm quan trọng của Cloud trong Data Science**
+#### Thử thách khi lập trình với AI
 
-- Trình bày vai trò của **điện toán đám mây (Cloud Computing)** trong việc hỗ trợ xử lý dữ liệu, huấn luyện và triển khai mô hình AI quy mô lớn.
-- So sánh **Cloud vs. On-premise**:
+Phần mở đầu trình bày những **hạn chế và thách thức khi đưa AI vào lập trình**:
 
-  - Cloud: khả năng mở rộng linh hoạt, triển khai nhanh, tiết kiệm chi phí vận hành, dễ dàng tích hợp.
-  - On-premise: tốn kém chi phí đầu tư ban đầu, khó mở rộng, bảo trì phức tạp.
+- AI chưa thể xử lý các project có logic phức tạp, đòi hỏi hiểu biết sâu về ngữ cảnh nghiệp vụ.
+- Lập trình viên **khó kiểm soát chi tiết** trong mã sinh ra nếu không mô tả rõ ràng mục tiêu và phạm vi.
+- Chất lượng code phụ thuộc nhiều vào **prompt và context** mà người dùng cung cấp.
 
-- Cloud (đặc biệt là **AWS**) mang lại nền tảng mạnh mẽ cho **Data Science pipeline** — từ thu thập, lưu trữ, xử lý dữ liệu, huấn luyện, cho đến triển khai mô hình AI.
+Đây chính là lý do AI-DLC ra đời: **tạo ra một quy trình có cấu trúc, giúp AI và con người phối hợp hiệu quả hơn.**
 
-#### **Các Layer AI Trên AWS**
+#### AI in Development – How AI is Changing Software
 
-AWS chia hệ sinh thái AI thành **3 tầng (layers)**, giúp người dùng lựa chọn mức độ quản lý phù hợp với năng lực và mục tiêu của mình:
+Phần này phân tích cách **AI đang thay đổi ngành phần mềm**:
 
-**1. AI Services (Fully Managed Layer)**
+- AI hỗ trợ sinh code, tạo tài liệu kỹ thuật, thiết kế API, và kiểm thử tự động.
+- Developer chuyển vai trò từ “code writer” sang “AI orchestrator” — người điều phối, định hướng và đánh giá đầu ra.
+- Các công cụ như **Amazon Q, GitHub Copilot, ChatGPT for Developers** trở thành **công cụ trung tâm trong workflow của team dev hiện đại**.
 
-> _Dành cho người dùng muốn ứng dụng AI mà không cần kiến thức chuyên sâu về Machine Learning._
+#### Giới thiệu về AI-DLC là gì
 
-- Các dịch vụ AI sẵn có, đã được huấn luyện bởi AWS.
-- Người dùng chỉ cần gọi API là có thể sử dụng ngay trong ứng dụng.
-- **Ví dụ:**
+**AI-Driven Development Lifecycle (AI-DLC)** là phương pháp tiếp cận phát triển phần mềm có sự đồng hành của AI, nơi mỗi bước được thiết kế để **cung cấp cho AI ngữ cảnh và mục tiêu cụ thể** nhằm tạo ra kết quả chính xác hơn.
 
-  - **Amazon Comprehend:** Phân tích ngôn ngữ tự nhiên (NLP)
-  - **Amazon Translate:** Dịch máy học đa ngôn ngữ
-  - **Amazon Textract:** Trích xuất dữ liệu từ tài liệu, hóa đơn
-  - **Amazon Rekognition:** Nhận diện hình ảnh và video
-  - **Amazon Polly:** Chuyển văn bản thành giọng nói
-  - **Amazon Bedrock:** Truy cập các mô hình nền tảng (Foundation Models) như Claude, Titan, Mistral...
+**Inception**
 
-👉 **Lợi ích:** Triển khai nhanh, không cần huấn luyện mô hình, chi phí linh hoạt theo nhu cầu sử dụng.
+1. **Build Context on Existing Codes** – AI được “nuôi” bằng mã nguồn hiện tại để hiểu cấu trúc dự án.
+2. **Elaborate Intent with User Stories** – Developer mô tả yêu cầu thông qua user story, làm rõ mục tiêu.
+3. **Plan with Units of Work** – Phân tách công việc thành các đơn vị nhỏ để AI có thể thực thi và sinh code từng phần.
 
-**2. ML Services (Semi-managed Layer)**
+**Construction**
 
-> _Dành cho Data Scientist, ML Engineer muốn xây dựng, huấn luyện và triển khai mô hình ML một cách tùy chỉnh hơn._
+4. **Domain Model (Component Model)** – Xây dựng mô hình miền hoặc sơ đồ kiến trúc logic.
+5. **Generate Code & Test** – AI sinh code và test tự động dựa trên thông tin đã lên kế hoạch.
+6. **Add Architectural Components** – Bổ sung các thành phần kiến trúc như API, data layer, logging, security.
+7. **Deploy with IaC & Tests** – Tự động triển khai hệ thống với Infrastructure as Code và test tích hợp.
 
-- **Amazon SageMaker** là trung tâm của tầng này: cung cấp bộ công cụ đầy đủ để **build – train – deploy** mô hình Machine Learning.
-- Các tính năng nổi bật:
+_Mỗi bước đều cung cấp thêm “rich context” cho bước kế tiếp, giúp AI hiểu sâu hơn về hệ thống và sinh ra kết quả ngày càng chính xác._
 
-  - **Data Wrangler:** Làm sạch và xử lý dữ liệu trực quan.
-  - **Feature Store:** Quản lý đặc trưng (features) dùng cho nhiều mô hình.
-  - **AutoML (SageMaker Autopilot):** Tự động huấn luyện mô hình.
-  - **Model Registry & Monitoring:** Theo dõi và quản lý mô hình sau khi deploy.
+#### CORE CONCEPTS – Ba nguyên lý cốt lõi
 
-👉 **Lợi ích:** Toàn quyền kiểm soát pipeline ML, có thể tùy chỉnh thuật toán, môi trường huấn luyện, và quy trình triển khai.
+1. **Context Awareness** – AI cần có ngữ cảnh rõ ràng về mã, yêu cầu và domain để hoạt động hiệu quả.
+2. **Collaborative Generation** – Con người và AI hợp tác: AI sinh code, con người định hướng và kiểm duyệt.
+3. **Continuous Refinement** – Quy trình lặp lại liên tục để tinh chỉnh đầu ra và cải thiện chất lượng.
 
-**3. AI Infrastructure (Self-managed Layer)**
+#### Mob Elaboration
 
-> _Dành cho tổ chức hoặc chuyên gia muốn tự quản lý toàn bộ hạ tầng AI/ML để tối ưu chi phí hoặc hiệu năng._
+Mob Elaboration là phương pháp mở rộng yêu cầu (intent elaboration) theo hình thức cộng tác nhóm:
 
-- Người dùng có thể xây dựng môi trường huấn luyện bằng cách kết hợp các dịch vụ hạ tầng cơ bản của AWS:
+- Nhiều thành viên cùng nhau mô tả yêu cầu, đặt câu hỏi, và bổ sung thông tin cho AI.
+- Giúp AI **hiểu sâu hơn** về nghiệp vụ, mục tiêu và logic phức tạp của dự án.
+- Cách tiếp cận này giúp **giảm rủi ro hiểu sai yêu cầu**, đặc biệt trong các team lớn hoặc đa miền.
 
-  - **Amazon EC2 / EC2 GPU Instances (P5, G6, Inferentia):** Huấn luyện mô hình tùy chỉnh quy mô lớn.
-  - **Amazon EKS / ECS:** Chạy các workload ML trong container hoặc Kubernetes.
-  - **AWS Lambda:** Xử lý dữ liệu hoặc inference nhỏ gọn, serverless.
-  - **Amazon S3 / EFS:** Lưu trữ dữ liệu và mô hình.
+#### 5-Stage Sequential Process của AI-DLC
 
-👉 **Lợi ích:** Linh hoạt tối đa, kiểm soát toàn bộ quá trình huấn luyện, nhưng yêu cầu kiến thức kỹ thuật cao hơn.
+AI-DLC được thực hiện qua 5 giai đoạn:
 
-#### Các Dịch Vụ AI Phổ Biến Của AWS Hỗ Trợ Sinh Viên Trong Quá Trình Train Model
+1. **Inception** – Hiểu yêu cầu, phân tích hệ thống.
+2. **Construction** – Tạo mô hình miền và cấu trúc ban đầu.
+3. **Generation** – Sinh mã tự động.
+4. **Testing** – Tự động hóa kiểm thử đơn vị và tích hợp.
+5. **Deployment** – Triển khai ứng dụng với IaC và CI/CD pipelines.
 
-**1. Amazon SageMaker**
+Mỗi vòng lặp giúp AI học thêm và cải thiện chất lượng đầu ra.
 
-- Môi trường phát triển tích hợp (SageMaker Studio) cho toàn bộ quy trình ML:
+#### Demo 1 – Trải nghiệm trực quan AI DLC với Amazon Q
 
-  - Chuẩn bị dữ liệu
-  - Huấn luyện mô hình
-  - Theo dõi kết quả
-  - Triển khai endpoint phục vụ API inference
+Buổi demo minh họa cách áp dụng AI-DLC trong thực tế thông qua **một dự án nhỏ**:
 
-- Hỗ trợ AutoML, GPU training, model monitoring và CI/CD cho mô hình AI.
+- Bắt đầu từ **ý tưởng đơn giản** → chuyển thành **user story** mô tả yêu cầu nghiệp vụ.
+- AI hỗ trợ **phân chia công việc (Units of Work)** và lập kế hoạch chi tiết cho từng module.
+- Người tham dự có thể **điều khiển AI thông qua câu hỏi, checkbox và điều kiện logic**, giúp AI hiểu rõ phạm vi công việc.
+- AI tiếp tục sinh code, viết test, tạo cấu trúc dự án và triển khai thử nghiệm tự động.
+- Demo thể hiện rõ cách **AI và con người phối hợp nhịp nhàng**: AI làm việc lặp đi lặp lại, con người định hướng và ra quyết định chiến lược.
 
-**2. Amazon Comprehend**
+#### Giới Thiệu Về Kiro
 
-- Dịch vụ NLP giúp phân tích, hiểu và phân loại ngôn ngữ tự nhiên.
+**Triết Lý Của Kiro**
 
-- **Chức năng chính:**
+Phần tiếp theo của workshop giới thiệu **Kiro**, một môi trường phát triển thông minh được thiết kế **xoay quanh triết lý “AI-native development”** – nơi AI là một phần cốt lõi, không phải chỉ là công cụ hỗ trợ.
 
-  - Phân tích cảm xúc (Sentiment Analysis)
-  - Nhận dạng thực thể (Entity Recognition)
-  - Phân loại văn bản (Text Classification)
-  - Gắn nhãn dữ liệu tự động
-  - Phát hiện ngôn ngữ
+Triết lý của Kiro tập trung vào ba yếu tố chính:
 
-- **Trường hợp sử dụng thực tế:**
+1. **Tích hợp sâu với quy trình phát triển** – AI không chỉ hỗ trợ viết code, mà còn tham gia lập kế hoạch, quản lý context, và phân tích tác động thay đổi.
+2. **Hiểu ngữ cảnh dự án toàn diện** – Kiro duy trì trạng thái hiểu biết liên tục về cấu trúc hệ thống, cho phép AI tương tác với toàn bộ project thay vì từng file riêng lẻ.
+3. **Kiểm soát & cộng tác thông minh** – Lập trình viên có thể hướng dẫn AI thông qua **contextual commands**, giúp đảm bảo rằng mỗi thay đổi đều có mục đích rõ ràng và nhất quán với hệ thống.
 
-  - Xử lý tài liệu thông minh
-  - Phân tích mail hàng loạt để phát hiện phản hồi tích cực/tiêu cực
-  - Phân tích cảm xúc và tâm lý khách hàng
-  - Hỗ trợ trung tâm liên lạc (Contact Center Analytics)
-  - Xác thực và trích xuất thông tin cá nhân
+**Cấu Trúc Project Trong Kiro**
 
-**3. Amazon Translate**
+Khác với các **text editor truyền thống** như VSCode hay JetBrains, Kiro không chỉ là môi trường viết mã — nó là **AI workspace có nhận thức cấu trúc**.
 
-- Dịch vụ dịch máy học (Neural Machine Translation).
-- Hỗ trợ hơn 75 ngôn ngữ với độ chính xác cao và dễ tích hợp.
-- Ứng dụng:
+Cấu trúc project trong Kiro bao gồm:
 
-  - Làm website đa ngôn ngữ
-  - Dịch nội dung tự động trong ứng dụng
-  - Hỗ trợ chatbot và phân tích dữ liệu đa ngôn ngữ
+- **Context Layer** – Lưu trữ ngữ cảnh, domain model, và quan hệ giữa các module.
+- **Task Layer** – Quản lý các đơn vị công việc (Units of Work) được AI theo dõi và hoàn thành dần.
+- **AI Agent Layer** – Mỗi tác vụ (code, test, refactor, deploy) có agent riêng đảm nhận, tạo ra mô hình phát triển **đa agent – hợp tác – song song**.
+- **Human-in-the-Loop Control** – Lập trình viên có thể can thiệp ở mọi bước: xác nhận, sửa đổi hoặc từ chối đầu ra của AI.
 
-**4. Amazon Textract**
+Điều này giúp Kiro không chỉ là công cụ sinh code mà trở thành **một hệ sinh thái phát triển hợp tác giữa người và AI**.
 
-- Tự động trích xuất văn bản và dữ liệu có cấu trúc từ hình ảnh, tài liệu, hoặc biểu mẫu.
-- Ứng dụng trong các quy trình như: số hóa hồ sơ, xử lý hóa đơn, tự động nhập dữ liệu vào hệ thống.
+#### Demo 2: Kiro – Áp Dụng AI-DLC
 
-#### Tổng Quan Data Science Pipeline Trên AWS
+Trong phần trình diễn, diễn giả minh họa cách Kiro vận hành **AI-DLC một cách liền mạch**:
 
-1. **Thu thập & lưu trữ dữ liệu:** Amazon S3, AWS Data Exchange
-2. **Tiền xử lý dữ liệu:** AWS Glue, Lambda, Athena
-3. **Huấn luyện mô hình:** SageMaker (train, tune, evaluate)
-4. **Triển khai mô hình:** SageMaker Endpoint / Lambda + API Gateway
-5. **Giám sát & tối ưu:** CloudWatch, Model Monitor
+1. Người dùng nhập **một yêu cầu nghiệp vụ cơ bản**, ví dụ “xây dựng hệ thống quản lý sự kiện”.
+2. Kiro tự động phân tích intent, tạo domain model và chia nhỏ thành các user story.
+3. AI trong Kiro sinh ra **các module, component và test case** tương ứng.
+4. Developer có thể tương tác qua **bảng kiểm (checkbox-based task control)** để xác nhận từng phần việc.
+5. Cuối cùng, Kiro **triển khai hệ thống hoàn chỉnh** với IaC và kiểm thử tự động.
 
-#### **Demo 1: Thiết kế Workflow AI Training bằng Giao Diện Kéo - Thả (No-Code/Low-Code)**
-
-- **Mục tiêu:** Giới thiệu cách xây dựng quy trình huấn luyện mô hình AI mà không cần viết nhiều code.
-- **Công cụ sử dụng:** Amazon SageMaker Studio / SageMaker Canvas
-- **Nội dung trình diễn:**
-
-  1. Chuẩn bị dataset và tải lên Amazon S3.
-  2. Dùng giao diện kéo-thả của SageMaker để:
-
-     - Chọn nguồn dữ liệu, thuật toán huấn luyện và tham số.
-     - Thiết kế toàn bộ pipeline gồm bước làm sạch dữ liệu, training, validation và deployment.
-
-  3. Quan sát trực quan tiến trình training và kết quả mô hình (accuracy, confusion matrix, metrics, v.v.).
-
-- **Thông điệp chính:** Sinh viên, nhà phát triển có thể nhanh chóng tạo workflow AI mà không cần viết code phức tạp — giúp rút ngắn thời gian nghiên cứu và thử nghiệm mô hình.
-
-#### **Demo 2: Triển khai AI Service và Truy Cập Qua API/Website**
-
-- **Mục tiêu:** Giới thiệu cách deploy mô hình AI để người dùng có thể truy cập và sử dụng thực tế.
-- **Công cụ sử dụng:** Amazon SageMaker Endpoint, API Gateway, và Lambda.
-- **Nội dung trình diễn:**
-
-  1. Deploy mô hình AI đã huấn luyện lên SageMaker Endpoint.
-  2. Tích hợp endpoint với API Gateway để tạo REST API công khai.
-  3. Tạo đường dẫn web hoặc API URL để người dùng có thể gửi yêu cầu (ví dụ: nhập câu văn để phân tích cảm xúc hoặc dịch ngôn ngữ).
-  4. Minh họa cách hiển thị kết quả trực quan (UI demo hoặc Postman/API test).
-
-- **Thông điệp chính:** Cho thấy cách AWS hỗ trợ triển khai mô hình AI từ giai đoạn nghiên cứu đến ứng dụng thực tế — dễ dàng chia sẻ, mở rộng, và thương mại hóa.
-
-#### Thảo Luận: Hiệu Năng & Chi Phí (Cloud vs. On-premise)
-
-| Tiêu chí                    | Cloud (AWS)                             | On-premise                     |
-| --------------------------- | --------------------------------------- | ------------------------------ |
-| **Khả năng mở rộng**        | Dễ dàng mở rộng tài nguyên theo nhu cầu | Giới hạn phần cứng cố định     |
-| **Chi phí**                 | Trả theo mức sử dụng (Pay-as-you-go)    | Chi phí đầu tư ban đầu cao     |
-| **Triển khai**              | Tự động, nhanh chóng                    | Thủ công, tốn thời gian        |
-| **Bảo trì**                 | AWS quản lý                             | Người dùng tự chịu trách nhiệm |
-| **Thích hợp cho sinh viên** | ✅ Có Free Tier, dễ học và thử nghiệm   | ❌ Khó tiếp cận, tốn kém       |
-
-#### Kết Luận
-
-- AWS cung cấp **hệ sinh thái AI toàn diện từ tầng hạ tầng đến tầng ứng dụng**, phù hợp với mọi đối tượng — từ sinh viên mới học AI đến doanh nghiệp triển khai quy mô lớn.
+Buổi demo cho thấy **AI-DLC không chỉ là lý thuyết**, mà có thể **được triển khai thực tế ngay trong môi trường Kiro** — nơi AI, con người, và quy trình phát triển hòa quyện thành một hệ thống thống nhất.
 
 ### Trải nghiệm trong event
 
-Tham gia workshop **“AI Services on AWS for Data Science”** là một trải nghiệm rất bổ ích, giúp tôi hiểu rõ hơn về **vai trò của Cloud trong Data Science** và cách AWS hỗ trợ huấn luyện, triển khai, và truy cập mô hình AI.
+Tham gia buổi workshop **“AI DLC x Kiro: Reinventing Developer Experience with AI”** là một trải nghiệm vô cùng bổ ích, giúp tôi hiểu rõ hơn về cách **AI được tích hợp sâu vào môi trường phát triển phần mềm** và cách mà **triết lý thiết kế của Kiro** mang lại hướng tiếp cận mới cho developer.
 
 #### Học hỏi từ các diễn giả có chuyên môn cao
 
-- Diễn giả giới thiệu **tầm quan trọng của Cloud** trong xử lý dữ liệu và huấn luyện mô hình.
-- Hiểu rõ **3 layer AI trên AWS**: AI-managed services, ML services (SageMaker), và AI frameworks.
+- Các diễn giả đã chia sẻ về **AI DLC** – một nền tảng hỗ trợ phát triển phần mềm dựa trên AI, giúp tự động hóa nhiều quy trình trong SDLC.
+- Ngoài ra, phần giới thiệu về **Kiro Editor** mang lại cái nhìn sâu sắc về cách xây dựng một text editor theo hướng **AI-native** thay vì chỉ “thêm plugin AI” vào môi trường cũ.
+- Tôi đặc biệt ấn tượng với triết lý của Kiro: **tối giản, hiệu năng cao, tập trung vào trải nghiệm người dùng và khả năng mở rộng theo module**.
 
 #### Trải nghiệm kỹ thuật thực tế
 
-- **Demo 1:** Thiết kế workflow AI bằng cách **kéo thả trong SageMaker Canvas** để train model mà không cần code.
-- **Demo 2:** **Triển khai mô hình AI** thành service có thể truy cập qua **API hoặc liên kết** thực tế.
+**Trong học tập:**
+- Áp dụng AI-DLC structure cho personal projects
+- Practice "Context Awareness" principle với AI assistants
+- Build habit of writing clear requirements as user stories
+
+**Cho career tương lai:**
+- Understand modular, extensible, maintainable system design như Kiro
+- Master Amazon Q và AI tools khác hiệu quả
+- Recognize importance of providing quality context cho AI
+
+**Thay đổi mindset:**
+- Approach problems với "AI-augmented" thinking
+- Consider building custom tools với deep AI integration
+- Always ask: "How can AI assist better at this step?"
 
 #### Ứng dụng công cụ hiện đại
 
-- Tìm hiểu các dịch vụ AI nổi bật: **Amazon Comprehend**, **Translate**, và **Textract**.
-- Hiểu cách các dịch vụ này hỗ trợ **NLP, dịch tự động**, và **trích xuất dữ liệu thông minh** trong nhiều ngữ cảnh.
+- Việc trải nghiệm **AI DLC trên Kiro** giúp tôi hiểu rõ hơn về khả năng **tự động hóa quy trình phát triển**, đặc biệt là ở các bước như code generation, documentation và debugging.
+- Tôi nhận ra tiềm năng của việc **xây dựng công cụ học tập và làm việc cá nhân** có khả năng gợi ý thông minh, giúp rút ngắn thời gian phát triển và nâng cao chất lượng sản phẩm.
+- Các khái niệm về modular design của Kiro cũng gợi ý cho tôi hướng đi trong việc **thiết kế hệ thống linh hoạt, dễ mở rộng và dễ bảo trì**.
 
 #### Kết nối và trao đổi
 
-- Giao lưu với chuyên gia và sinh viên cùng quan tâm đến **AI & Cloud**.
-- Trao đổi về **chi phí, hiệu năng (Cloud vs On-premise)** và cách tối ưu sử dụng SageMaker.
+- Workshop tạo cơ hội để tôi **giao lưu với các developer, nhà nghiên cứu AI và product designer**, từ đó hiểu thêm về xu hướng **AI-augmented development**.
+- Qua các cuộc thảo luận, tôi học được nhiều về cách **AI có thể đóng vai trò cộng tác viên sáng tạo**, giúp developer tập trung hơn vào logic và tư duy hệ thống thay vì những thao tác lặp lại.
 
 #### Bài học rút ra
 
-- Cloud là **nền tảng trọng yếu** trong quy trình Data Science hiện đại.
-- AWS cung cấp đầy đủ công cụ cho mọi cấp độ AI — từ không code đến tự triển khai.
-- Hiểu rõ hơn **cách đưa mô hình AI vào sản phẩm thực tế** qua các dịch vụ AWS.
+Tham gia workshop **"AI DLC x Kiro"** là một turning point trong cách tôi nhìn nhận về vai trò của AI trong software development. 
+
+**Điều quan trọng nhất** tôi học được không phải là các công cụ cụ thể, mà là **mindset shift** cần thiết:
+- AI không phải là công cụ để code nhanh hơn
+- AI là partner để tư duy và thiết kế hệ thống tốt hơn
+- Structured process (như AI-DLC) quan trọng hơn là raw AI power
+
+Workshop cũng cho tôi thấy tương lai của development tools - nơi **AI-first architecture** như Kiro sẽ trở thành standard, và developers cần prepare cho paradigm shift này.
+
+Những insights từ AWS Solution Architects và hands-on experience với Kiro đã trang bị cho tôi foundation vững chắc để áp dụng AI vào learning journey và future career trong software engineering.
 
 #### Một số hình ảnh khi tham gia sự kiện
 
-![](/images/4-EventParticipated/event4-3-1.png)
+<img src="/images/4-EventParticipated/4.2-Event2/Event_02_IMG_6887.png" alt="Event_02" width="2000"/>
+
+> **Hình nhóm check-in sau sự kiện**
+
+> Đây là khoảnh khắc check-in của nhóm sau khi kết thúc workshop. Sự kiện này mang lại nhiều insights quý giá về cách AI đang reshape development workflow.
+  
+<img src="/images/4-EventParticipated/4.2-Event2/Event_02_IMG_6884.jpeg" alt="Event_02" width="2000"/>
+
+> **Không gian sự kiện chuyên nghiệp**
+
+> Workshop được tổ chức bài bản với đầy đủ demo stations và networking opportunities. Đây là một trong những sự kiện quan trọng giúp em hiểu sâu về AI-driven development.
+
+

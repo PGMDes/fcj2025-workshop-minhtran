@@ -1,213 +1,202 @@
 ---
 title: "Event 2"
-date: "2025-09-09"
-weight: 1
+date: "2025-10-03"
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Report: “WORKSHOP: DATA SCIENCE ON AWS”
+# Learning Notes from "AI-Driven Development Lifecycle: Reinventing Software Engineering"
 
 ### Event Objectives
 
-- Share AWS AI services
-- Demonstrate deploying AI models using Amazon SageMaker
-- Show how to deploy models and access them via APIs
+- Understand how AI can **automate and optimize** each stage of the Software Development Lifecycle (SDLC).
+- Grasp the philosophy of **AI augmenting humans rather than replacing them** in the application development process.
+- Directly observe how **Amazon Q** and other AI tools support developers from ideation, coding, to infrastructure deployment (Infrastructure as Code – IaC).
+- Recognize the "**AI-first development**" trend – where AI becomes a natural part of future software development processes.
 
-### Speakers
+### Speaker List
 
-- **Van Hoang Kha** - Cloud Solutions Architect, AWS User Group Leader
-- **Bach Doan Vuong** - Cloud Developer Engineer, AWS Community Builder
+- **Mr.Toan Huynh** - PMP, Senior Solutions Architect, AWS
+- **Ms.My Nguyen** - Senior Solutions Architect, AWS
 
-### Highlights
+### Highlighted Content
 
-#### **Introduction & the importance of Cloud in Data Science**
+#### Challenges in AI-Assisted Programming
 
-- Discussed the role of cloud computing in supporting data processing, training, and deploying AI models at scale.
-- Cloud vs. On-premise:
+The opening section presented **limitations and challenges when integrating AI into programming**:
 
-  - Cloud: flexible scalability, rapid deployment, lower operating costs, easy integration.
-  - On-premise: high upfront investment, harder to scale, complex maintenance.
+- AI cannot yet handle projects with complex logic requiring deep understanding of business context.
+- Developers **struggle to control details** in generated code if they don't clearly describe objectives and scope.
+- Code quality heavily depends on **prompts and context** provided by users.
 
-- Cloud (especially **AWS**) provides a strong foundation for the Data Science pipeline — from collection, storage, and processing to training and deploying AI models.
+This is precisely why AI-DLC was created: **to establish a structured process enabling more effective collaboration between AI and humans.**
 
-#### **AI Layers on AWS**
+#### AI in Development – How AI is Changing Software
 
-AWS organizes the AI ecosystem into **three layers**, helping users choose the right level of management based on skills and goals:
+This section analyzed how **AI is transforming the software industry**:
 
-**1. AI Services (Fully Managed Layer)**
+- AI assists in code generation, technical documentation, API design, and automated testing.
+- Developers transition from "code writers" to "AI orchestrators" — coordinators who guide and evaluate outputs.
+- Tools like **Amazon Q, GitHub Copilot, ChatGPT for Developers** become **central tools in modern dev team workflows**.
 
-> _For users who want to apply AI without deep Machine Learning knowledge._
+#### Introduction to AI-DLC
 
-- Fully managed AI services that have been pre-trained by AWS.
-- Users can call APIs to use them directly in applications.
-- Examples:
+**AI-Driven Development Lifecycle (AI-DLC)** is a software development approach with AI collaboration, where each step is designed to **provide AI with specific context and objectives** to generate more accurate results.
 
-  - **Amazon Comprehend:** Natural language processing (NLP)
-  - **Amazon Translate:** Neural machine translation
-  - **Amazon Textract:** Extract data from documents and invoices
-  - **Amazon Rekognition:** Image and video recognition
-  - **Amazon Polly:** Text-to-speech
-  - **Amazon Bedrock:** Access to foundation models (e.g., Claude, Titan, Mistral)
+**Inception**
 
-👉 Benefits: Fast deployment, no model training needed, cost scales with usage.
+1. **Build Context on Existing Codes** – AI is "fed" with current source code to understand project structure.
+2. **Elaborate Intent with User Stories** – Developers describe requirements through user stories, clarifying objectives.
+3. **Plan with Units of Work** – Break down work into small units for AI to execute and generate code incrementally.
 
-**2. ML Services (Semi-managed Layer)**
+**Construction**
 
-> _For Data Scientists and ML Engineers who want to build, train, and deploy ML models with more customization._
+4. **Domain Model (Component Model)** – Build domain models or logical architecture diagrams.
+5. **Generate Code & Test** – AI generates code and automated tests based on planned information.
+6. **Add Architectural Components** – Add architectural components like APIs, data layers, logging, security.
+7. **Deploy with IaC & Tests** – Automatically deploy systems with Infrastructure as Code and integration tests.
 
-- **Amazon SageMaker** is at the center of this layer: it provides tools to build, train, and deploy ML models.
-- Key features:
+_Each step provides additional "rich context" for the next step, helping AI understand the system more deeply and generate increasingly accurate results._
 
-  - **Data Wrangler:** Visual data cleaning and processing.
-  - **Feature Store:** Manage features across models.
-  - **AutoML (SageMaker Autopilot):** Automated model training.
-  - **Model Registry & Monitoring:** Track and manage models after deployment.
+#### CORE CONCEPTS – Three Core Principles
 
-👉 Benefits: Full control over the ML pipeline, customizable algorithms, training environments, and deployment workflows.
+1. **Context Awareness** – AI needs clear context about code, requirements, and domain to operate effectively.
+2. **Collaborative Generation** – Humans and AI collaborate: AI generates code, humans guide and review.
+3. **Continuous Refinement** – Iterative process to refine outputs and improve quality.
 
-**3. AI Infrastructure (Self-managed Layer)**
+#### Mob Elaboration
 
-> _For organizations or experts who want to fully manage AI/ML infrastructure to optimize cost or performance._
+Mob Elaboration is a method for expanding requirements (intent elaboration) through team collaboration:
 
-- Users can build training environments using core AWS infrastructure services:
+- Multiple members jointly describe requirements, ask questions, and add information for AI.
+- Helps AI **understand more deeply** about business, objectives, and complex project logic.
+- This approach helps **reduce misunderstanding risks**, especially in large or multi-domain teams.
 
-  - **Amazon EC2 / GPU Instances (P5, G6, Inferentia):** Train large custom models.
-  - **Amazon EKS / ECS:** Run ML workloads in containers or Kubernetes.
-  - **AWS Lambda:** Small-scale data processing or serverless inference.
-  - **Amazon S3 / EFS:** Store data and models.
+#### 5-Stage Sequential Process of AI-DLC
 
-👉 Benefits: Maximum flexibility and control, but requires higher technical expertise.
+AI-DLC is executed through 5 stages:
 
-#### Popular AWS AI Services to Support Students During Model Training
+1. **Inception** – Understand requirements, analyze systems.
+2. **Construction** – Create domain models and initial structure.
+3. **Generation** – Automatic code generation.
+4. **Testing** – Automate unit and integration testing.
+5. **Deployment** – Deploy applications with IaC and CI/CD pipelines.
 
-**1. Amazon SageMaker**
+Each iteration helps AI learn more and improve output quality.
 
-- Integrated development environment (SageMaker Studio) for the full ML lifecycle:
+#### Demo 1 – Hands-on Experience with AI DLC using Amazon Q
 
-  - Data preparation
-  - Model training
-  - Result tracking
-  - Deploying endpoints for API inference
+The demo illustrated how to apply AI-DLC in practice through **a small project**:
 
-- Supports AutoML, GPU training, model monitoring, and CI/CD for AI models.
+- Starting from **a simple idea** → converting to **user story** describing business requirements.
+- AI assists in **dividing work (Units of Work)** and detailed planning for each module.
+- Participants can **control AI through questions, checkboxes, and logical conditions**, helping AI understand the scope of work.
+- AI continues to generate code, write tests, create project structure, and automatically deploy trials.
+- The demo clearly showed how **AI and humans collaborate harmoniously**: AI handles repetitive tasks, humans guide and make strategic decisions.
 
-**2. Amazon Comprehend**
+#### Introduction to Kiro
 
-- NLP service to analyze, understand, and classify natural language.
+**Kiro's Philosophy**
 
-- Main capabilities:
+The next part of the workshop introduced **Kiro**, an intelligent development environment designed **around the "AI-native development" philosophy** – where AI is a core component, not just a support tool.
 
-  - Sentiment analysis
-  - Entity recognition
-  - Text classification
-  - Automated labeling
-  - Language detection
+Kiro's philosophy focuses on three main elements:
 
-- Use cases:
+1. **Deep integration with development processes** – AI not only assists in writing code but also participates in planning, managing context, and analyzing change impacts.
+2. **Comprehensive project context understanding** – Kiro maintains continuous state awareness of system structure, allowing AI to interact with the entire project rather than individual files.
+3. **Intelligent control & collaboration** – Developers can guide AI through **contextual commands**, ensuring each change has a clear purpose and is consistent with the system.
 
-  - Intelligent document processing
-  - Bulk email analysis to detect positive/negative responses
-  - Customer sentiment and behavioral analysis
-  - Contact center analytics
-  - Information extraction and validation
+**Project Structure in Kiro**
 
-**3. Amazon Translate**
+Unlike **traditional text editors** like VSCode or JetBrains, Kiro is not just a code writing environment — it's an **AI workspace with structural awareness**.
 
-- Neural machine translation service.
-- Supports over 75 languages with high accuracy and easy integration.
-- Applications:
+Project structure in Kiro includes:
 
-  - Multilingual websites
-  - Automatic content translation in apps
-  - Multilingual chatbot support and analytics
+- **Context Layer** – Stores context, domain models, and relationships between modules.
+- **Task Layer** – Manages Units of Work tracked and gradually completed by AI.
+- **AI Agent Layer** – Each task (code, test, refactor, deploy) has a dedicated agent, creating a **multi-agent – collaborative – parallel** development model.
+- **Human-in-the-Loop Control** – Developers can intervene at every step: confirm, modify, or reject AI outputs.
 
-**4. Amazon Textract**
+This makes Kiro not just a code generation tool but **a collaborative development ecosystem between humans and AI**.
 
-- Automatically extract text and structured data from images, documents, and forms.
-- Used for processes like record digitization, invoice processing, and automatic data entry.
+#### Demo 2: Kiro – Applying AI-DLC
 
-#### AWS Data Science Pipeline Overview
+In the demonstration, the speaker illustrated how Kiro operates **AI-DLC seamlessly**:
 
-1. Data collection & storage: Amazon S3, AWS Data Exchange
-2. Data preprocessing: AWS Glue, Lambda, Athena
-3. Model training: SageMaker (train, tune, evaluate)
-4. Model deployment: SageMaker Endpoint / Lambda + API Gateway
-5. Monitoring & optimization: CloudWatch, Model Monitor
+1. User inputs **a basic business requirement**, e.g., "build an event management system".
+2. Kiro automatically analyzes intent, creates domain models, and breaks down into user stories.
+3. AI in Kiro generates **corresponding modules, components, and test cases**.
+4. Developers can interact through **checkbox-based task control** to confirm each part of the work.
+5. Finally, Kiro **deploys the complete system** with IaC and automated testing.
 
-#### **Demo 1: Designing an AI Training Workflow with a Drag-and-Drop Interface (No-Code/Low-Code)**
-
-- **Goal:** Show how to build an AI training pipeline without heavy coding.
-- **Tools:** Amazon SageMaker Studio / SageMaker Canvas
-- **Demo steps:**
-
-  1. Prepare the dataset and upload it to Amazon S3.
-  2. Use SageMaker's drag-and-drop interface to:
-
-     - Choose data sources, training algorithms, and parameters.
-     - Design a pipeline including data cleaning, training, validation, and deployment steps.
-
-  3. Visually monitor training progress and model results (accuracy, confusion matrix, metrics, etc.).
-
-- **Key message:** Students and developers can quickly create AI workflows without complex code, speeding up research and experimentation.
-
-#### **Demo 2: Deploying an AI Service and Accessing It Via API/Website**
-
-- **Goal:** Demonstrate how to deploy an AI model so users can access it in practice.
-- **Tools:** Amazon SageMaker Endpoint, API Gateway, and Lambda.
-- **Demo steps:**
-
-  1. Deploy the trained model to a SageMaker Endpoint.
-  2. Integrate the endpoint with API Gateway to create a public REST API.
-  3. Provide a web route or API URL for users to send requests (e.g., submit text for sentiment analysis or translation).
-  4. Show how to present results visually (UI demo or Postman/API test).
-
-- **Key message:** Demonstrates how AWS supports moving AI from research to production — easy to share, scale, and commercialize.
-
-#### Discussion: Performance & Cost (Cloud vs. On-premise)
-
-| Criteria                  | Cloud (AWS)                           | On-premise                  |
-| ------------------------- | ------------------------------------- | --------------------------- |
-| **Scalability**           | Easily scale resources as needed      | Limited by fixed hardware   |
-| **Cost**                  | Pay-as-you-go                         | High upfront investment     |
-| **Deployment**            | Automated, fast                       | Manual, time-consuming      |
-| **Maintenance**           | Managed by AWS                        | User is responsible         |
-| **Suitable for students** | ✅ Free Tier available, easy to learn | ❌ Harder to access, costly |
-
-#### Conclusion
-
-- AWS provides a comprehensive AI ecosystem from infrastructure to application layers, suitable for everyone — from students learning AI to enterprises deploying at scale.
+The demo showed that **AI-DLC is not just theory**, but can **be implemented practically within the Kiro environment** — where AI, humans, and development processes merge into a unified system.
 
 ### Event Experience
 
-Attending the workshop “AI Services on AWS for Data Science” was very valuable. It helped me better understand the role of cloud in Data Science and how AWS supports training, deploying, and accessing AI models.
+Participating in the **"AI DLC x Kiro: Reinventing Developer Experience with AI"** workshop was an extremely valuable experience, helping me better understand how **AI is deeply integrated into software development environments** and how **Kiro's design philosophy** brings a new approach to developers.
 
-#### Key takeaways from expert speakers
+#### Learning from Expert Speakers
 
-- Speakers emphasized the importance of cloud in data processing and model training.
-- Gained a clear understanding of the three AI layers on AWS: AI-managed services, ML services (SageMaker), and AI frameworks.
+- Speakers shared about **AI DLC** – a platform supporting AI-based software development, automating many SDLC processes.
+- Additionally, the introduction to **Kiro Editor** provided deep insights into building a text editor in an **AI-native** direction rather than just "adding AI plugins" to old environments.
+- I was particularly impressed with Kiro's philosophy: **minimalist, high-performance, focused on user experience and module-based scalability**.
 
-#### Hands-on technical experience
+#### Practical Technical Experience
 
-- **Demo 1:** Designed an AI workflow using SageMaker Canvas drag-and-drop to train models without code.
-- **Demo 2:** Deployed an AI model as a service accessible via API or link.
+**In learning:**
 
-#### Using modern tools
+- Apply AI-DLC structure for personal projects
+- Practice "Context Awareness" principle with AI assistants
+- Build habit of writing clear requirements as user stories
 
-- Learned about key AI services: **Amazon Comprehend**, **Translate**, and **Textract**.
-- Understood how these services support NLP, machine translation, and intelligent data extraction.
+**For future career:**
 
-#### Networking and discussion
+- Understand modular, extensible, maintainable system design like Kiro
+- Master Amazon Q and other AI tools effectively
+- Recognize importance of providing quality context for AI
 
-- Interacted with experts and fellow students interested in AI & Cloud.
-- Discussed cost, performance (Cloud vs On-premise), and how to optimize SageMaker usage.
+**Mindset shift:**
 
-#### Lessons learned
+- Approach problems with "AI-augmented" thinking
+- Consider building custom tools with deep AI integration
+- Always ask: "How can AI assist better at this step?"
 
-- Cloud is a foundational platform for modern Data Science workflows.
-- AWS provides tools for every AI skill level — from no-code to fully managed deployments.
-- Gained clearer knowledge of how to bring AI models into real products using AWS services.
+#### Applying Modern Tools
 
-#### Some photos from the event
+- Experiencing **AI DLC on Kiro** helped me better understand the capability of **automating development processes**, especially in steps like code generation, documentation, and debugging.
+- I recognized the potential of **building personal learning and working tools** with intelligent suggestions, helping shorten development time and improve product quality.
+- Kiro's modular design concepts also suggested directions for **designing flexible, scalable, and maintainable systems**.
 
-## ![](/images/4-EventParticipated/event4-3-1.png)
+#### Networking and Exchange
+
+- The workshop created opportunities for me to **connect with developers, AI researchers, and product designers**, thereby learning more about the **AI-augmented development** trend.
+- Through discussions, I learned much about how **AI can play the role of creative collaborator**, helping developers focus more on logic and system thinking rather than repetitive operations.
+
+#### Lessons Learned
+
+Participating in the **"AI DLC x Kiro"** workshop was a turning point in how I perceive AI's role in software development.
+
+**The most important thing** I learned wasn't specific tools, but the necessary **mindset shift**:
+
+- AI is not a tool for faster coding
+- AI is a partner for better thinking and system design
+- Structured processes (like AI-DLC) are more important than raw AI power
+
+The workshop also showed me the future of development tools - where **AI-first architecture** like Kiro will become standard, and developers need to prepare for this paradigm shift.
+
+Insights from AWS Solution Architects and hands-on experience with Kiro equipped me with a solid foundation to apply AI in my learning journey and future career in software engineering.
+
+#### Some Photos from the Event
+
+<img src="/images/4-EventParticipated/4.2-Event2/Event_02_IMG_6887.png" alt="Event_02" width="2000"/>
+
+> **Group photo check-in after the event**
+
+> This is the group check-in moment after the workshop ended. This event provided many valuable insights about how AI is reshaping development workflow.
+
+<img src="/images/4-EventParticipated/4.2-Event2/Event_02_IMG_6884.jpeg" alt="Event_02" width="2000"/>
+
+> **Professional event space**
+
+> The workshop was professionally organized with complete demo stations and networking opportunities. This was one of the important events that helped me deeply understand AI-driven development.

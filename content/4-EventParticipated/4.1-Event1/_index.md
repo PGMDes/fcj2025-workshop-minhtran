@@ -1,172 +1,397 @@
 ---
 title: "Event 1"
-date: "2025-09-09"
+date: "2025-09-18"
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# Report: “AI-Driven Development Lifecycle: Reimagining Software Engineering”
+# Summary Report: “Vietnam Cloud Day 2025: Ho Chi Minh City Connect Edition for Builders (Track 2: Migration & Modernization)”
 
 ### Event Objectives
 
-- Understand how AI can automate and optimize stages of the Software Development Lifecycle (SDLC).
-- Embrace the philosophy of AI augmenting humans rather than replacing them in the software development process.
-- Observe how tools like Amazon Q and other AI assistants support developers from ideation and code generation to infrastructure deployment (IaC).
-- Learn about the emerging trend of “AI-first development,” where AI becomes a natural part of future dev workflows.
+- Complete large-scale migration and modernization with AWS
+- Modernize applications using generative AI–powered tools
+- Group discussion: Application modernization—Accelerate business transformation
+- Transform VMware with AI-driven cloud-modernization technologies
+- AWS security at scale: From development to production
 
 ### Speakers
 
-- **Toan Huynh**
-- **My Nguyen**
+- **Nguyen Van Hai** - Director of Software Engineering, Techcombank
+- **Nguyen The Vinh** - Co-Founder & CTO, Ninety Eight
+- **Nguyen Minh Nganh** - AI Specialist, OCB
+- **Nguyen Manh Tuyen** - Head of Data Application, LPBank Securities
 
-### Highlights
+### Key Highlights
 
-#### Challenges of programming with AI
+#### 1. Learn large-scale migration and modernization strategies with AWS through real-world case studies from Techcombank
 
-The introduction covered the limitations and challenges of applying AI to programming:
+- The Modernization Journey of Techcombank's
 
-- AI still struggles with projects that require deep domain knowledge and complex business logic.
-- Developers can have limited control over generated code when prompts and scope are not well-defined.
-- The quality of generated code depends heavily on the prompt and context provided to the model.
+  + **Assess**: Inventory the environment and identify gaps.
+  + **Mobilize**: Establish CCoE, define guardrails, and build cloud fluency.
+  + **Migrate & Modernize**: Prioritize high-impact workloads.
+  + **Reinvent**: AI, automation, data products, new business models.
 
-This motivates the AI-DLC approach: creating a structured process to help AI and humans collaborate more effectively.
+- Generative AI in Modernization.
 
-#### How AI is changing software development
+  + **Code Transformation:** Java 8 -> 21, .NET -> .NET 8
+  + **Dependency Mapping:** Automatied analysis of system relationships.
+  + **Environment Assessment:** Amazon: thousands of services modernized with AI
 
-This section analyzed how AI is transforming the software industry:
+- Solutions and strategies Techcombank applied when using AWS services. Modernization with AWS native technologies:
 
-- AI assists code generation, technical documentation, API design, and automated testing.
-- Developers shift roles from “code writers” to “AI orchestrators” who guide, evaluate, and refine AI outputs.
-- Tools like Amazon Q, GitHub Copilot and ChatGPT for Developers become central parts of modern development workflows.
+  + Amazon EKS
+  + Amazon Aurora MySQL
+  + Amazon MSK
+  + Amazon ElastiCache for Redis OSS.
 
-#### 🔹 What is AI-DLC
+- Overview of the Modernization Strategy Blueprint.
 
-AI-Driven Development Lifecycle (AI-DLC) is an AI-augmented software development approach where each stage is designed to provide AI with specific context and goals to produce more accurate results.
+  ```
+  Align: Executive sponsorship and business drivers
+  |
+  Assess: Understand people, process, and technology
+  |
+  Mobilize: CoE, governance, training
+  |
+  Modernize: Replatform, refactor, rebuild
+  |
+  Reinvent: Data, AI, and modern apps for innovation
+  ```
 
-🟧 Inception
+#### 2. Gain knowledge about modernizing applications using Generative Al-powered tools, with practical insights from VPBank
 
-1. Build Context on Existing Code – feed AI the current codebase so it understands project structure.
-2. Elaborate Intent with User Stories – developers describe requirements via user stories to clarify goals.
-3. Plan with Units of Work – break work into small units the AI can execute and generate code for.
+- Modernization is the process of progressively transforming applications to achieve the availability, scalability, business agility, and cost optimization benefits of running on the cloud.
 
-🟦 Construction
+***Top 4 Use cases – App Modernization with GenAI.***
 
-4. Domain Model (Component Model) – build domain models or architecture diagrams.
-5. Generate Code & Test – AI generates code and tests based on the plan.
-6. Add Architectural Components – add API layers, data layers, logging, and security components.
-7. Deploy with IaC & Tests – automate deployment using Infrastructure as Code and integration tests.
+**Use case 1: Streamline VMware Migration with AWS Transform for VMware**
 
-_🔁 Each stage provides richer context for the next, helping AI produce increasingly accurate outputs._
+*Accelerate infrastructure migration and modernization with intelligent discovery and automated execution*
 
-#### Core Concepts
+- Slash VMware migration timelines with AWS Transform's intelligent automation.
 
-1. Context Awareness – AI needs clear context about code, requirements, and domain to work well.
-2. Collaborative Generation – humans and AI collaborate: AI generates code, humans direct and verify outputs.
-3. Continuous Refinement – iterative cycles to refine outputs and improve quality.
+- Convert complex network configurations in hours instead of weeks using Al-powered discovery, dependency mapping, and automated wave planning.
 
-#### Mob Elaboration
+- Scale your migration practice with automated security group creation, intelligent EC2 instance selection, and flexible deployment options including hub-and-spoke or isolated
+VPC configurations.
 
-Mob Elaboration is a collaborative method for elaborating intents:
+- Gain up to 90% improverent in execution times while reducing manual effort by 80%.
 
-- Multiple participants contribute user stories, questions, and additional context for the AI.
-- It helps AI gain deeper understanding of domain, goals, and complex logic.
-- This approach reduces the risk of misunderstandings—especially in large or cross-domain teams.
+**Use case 2: GenAI Development with AWS Serverless and Container Solutions**
 
-#### The 5-Stage Sequential Process of AI-DLC
+*Build Enterprise-Ready GenAI Applications Across AWS Serverless and Containers Platforms*
 
-AI-DLC runs through 5 phases:
+- AWS offers two powerful paths for GenAI application development and deployment:
 
-1. Inception – understand requirements and analyze the system.
-2. Construction – create domain models and initial structure.
-3. Generation – automated code generation.
-4. Testing – automated unit and integration testing.
-5. Deployment – deploy applications with IaC and CI/CD pipelines.
+  + Serverless with AWS Bedrock: Rapidly develop and deploy GenAI applications using AWS Lambda, ECS with Fargate, Step Functions, and EventBridge. Ideal for chatbots, document generation, and intelligent content processing. Leverage the latest AWS Bedrock updates and reference architectures.
 
-Each loop improves the AI's outputs through incremental learning and feedback.
+  + Container-Based with Amazon EKS: Build, train, and run GenAl apps on Kubernetes, benefiting from its powerful orchestration capabilities. Utilize open-source tools and cloud-native services for scalable GenAl workloads. Flexible deployment across cloud and on-premises environments with constant innovation from the OSS community.
 
-#### Demo 1 – Interactive AI-DLC experience with Amazon Q
+- Choose one approach or combine both to best fit your specific GenAI application requirements and accelerate your AI journey.
 
-The demo showcased AI-DLC in practice with a small project:
+**Use case 3: Revolutionize .NET Modernization with AWS Transform for .NET**
 
-- Start from a simple idea and turn it into a user story describing business requirements.
-- AI helps split tasks into Units of Work and plans implementation details for each module.
-- Attendees interact with AI using questions, checkboxes, and logical conditions to clarify scope.
-- AI generates code, tests, project structure, and executes trial deployments.
-- The demo illustrated smooth collaboration between AI and humans: AI performs repetitive generation while humans steer and make decisions.
+*Transform legacy Windows applications to cloud-native with AI-powered automation.*
 
-#### Introducing Kiro
+- Modernize Windows-based applications up to 4× faster with AWS Transform for .NET.
+- Leverage AI automation to analyze dependencies, refactor code, and optimize for Linux deployment while cutting licensing costs by up to 40%.
+- Transform hundreds of applications in parallel with automated testing and validation câpbilities—from legacy MVC applications to WCF services.
+- Advanced features include automatic UI modernization, private package handling, and intelligent wave planning, delivering comprehensive modernization with exceptional speed.
 
-Philosophy of Kiro
+**Use case 4: Elevate Platform Engineering with GenAI & IDP**
 
-The workshop introduced Kiro, an intelligent development environment built around the idea of “AI-native development” where AI is a core collaborator rather than just a tool.
+*Harness the power of intelligent assistants like AWS Transform Developer with Internal Development Platforms.*
 
-Kiro’s philosophy emphasizes three points:
+- Scaling modernization at an enterprise level requires time and investment to develop Internal Development Platforms (IDP). Gartner predicts that by 2026, 80% of software engineering organizations will establish platform teams as internal providers of reusable services, components, and tools for application delivery.
 
-1. Deep integration with the development process – AI participates in planning, context management, and impact analysis.
-2. Comprehensive project context – Kiro maintains ongoing awareness of project structure so AI can interact with the whole project rather than single files.
-3. Intelligent control & collaboration – developers guide AI via contextual commands so each change has clear intent and consistency.
+- Harness the power of intelligent assistants like AWS Transform Developer with IDPs to:
+    1. Create workflows and automate repetitive tasks.
 
-This makes Kiro more than a code generator: it is an ecosystem for collaborative human–AI development.
+    2. Learn IDP best practices leading organizations, such as Adobe, Expedia, JPMC, and Goldman Sachs.
 
-Project structure in Kiro
+    3. Understand AWS container blueprints and reference architectures to deliver accelerated velocity and scaling for an enterprise scale modernization initiative.
 
-Unlike traditional text editors like VSCode or JetBrains, Kiro is an AI-aware workspace with structural awareness.
+**Common modernization drivers**
 
-Its project model includes:
+- Reduce costs
 
-- Context Layer – stores context, domain models, and relationships among modules.
-- Task Layer – manages Units of Work tracked and executed by AI.
-- AI Agent Layer – agents handle specific tasks (code, tests, refactor, deploy) enabling a multi-agent collaborative model.
-- Human-in-the-Loop Control – developers can confirm, modify, or reject AI outputs at any stage.
+  + Reduce/eliminate Windows & SQL Server licensing costs
+  + Create architectures that match cost to actual load
+  + Leverage ARM64 architectures for better price-performance
 
-Kiro therefore becomes an ecosystem for coordinated human–AI development rather than just a code editor.
+- Increase pace of innovation
 
-#### Demo 2: Kiro in practice
+  + Decompose monoliths into smaller services / microservices
+  + Take advantage of new technologies and C# language features
+  + Automate manual processes
 
-In the demonstration, the presenters showed how Kiro implements AI-DLC:
+- Improve ability to scale
 
-1. User provides a basic business requirement like “build an event management system.”
-2. Kiro analyzes intent, creates a domain model, and splits work into user stories.
-3. AI generates modules, components, and corresponding test cases.
-4. Developers interact with a checkbox-based task control to approve each unit of work.
-5. Kiro finally deploys the completed system using IaC and automated tests.
+  + Scale individual components / services
+  + Granular scaling with containers / serverless
 
-The demo proved AI-DLC is practical: AI, human operators, and processes integrate into a single coherent workflow.
+- Attract and retain talent
 
-### Event experience
+#### 3. Gain insights from top industry experts through panel discussions on application modernization
 
-Attending the workshop “AI DLC x Kiro: Reinventing Developer Experience with AI” was highly valuable, clarifying how AI can be deeply embedded into the developer experience and how Kiro’s design offers a fresh approach for developers.
+**.NET Framework vs cross-platform .NET**
 
-#### Insights from expert speakers
+- **.NET Framework**:
 
-- Speakers presented AI-DLC as a platform that automates many SDLC tasks and supports software development using AI.
-- The Kiro introduction gave a perspective on designing an AI-native text editor rather than adding AI plugins to legacy editors.
-- I was particularly impressed by Kiro’s philosophy: minimalism, high performance, user-focused experience, and modular extensibility.
+  + Windows-only OS
+  + Version 1.0 released in 2002
+  + Final version is 4.8*, released in 2019
+  + Monolithic installation—A large number of libraries are installed at once.
+  + EC2, Elastic Beanstalk, ECS, and EKS.
 
-#### Practical technical takeaways
+- **.NET (formerly .NET Core)**
 
-- The demo showed how AI-DLC and Kiro can create, refactor, and optimize code efficiently.
-- A small starter project was created and managed within Kiro, demonstrating auto-refactoring, test generation and logic analysis.
-- Compared to editors like VSCode and Sublime, Kiro stands out for its AI-first architecture and lightweight plugin model that preserves performance.
+  + Cross-platform (Windows, Linux, macOS)
+  + Version 1.0 released in 2016
+  + Current GA version is 8.0, released in 2023
+  + Supports side-by-side installations
+  + Most libraries are distributed individually
+  + EC2, Elastic Beanstalk, ECS, EKS, Lambda
+  + Fargate
 
-#### Modern tooling and potential applications
+**AWS Transform: Orchestrated intelligence**
 
-- Experiencing AI-DLC on Kiro highlighted the potential to automate development workflows—especially code generation, documentation, and debugging.
-- I saw opportunities to build personal learning and productivity tools that provide smart suggestions and accelerate development.
-- Kiro’s modular design inspires approaches to building flexible, maintainable systems.
+- Unified web experience -> End-to-end automation -> Dedicated agency -> Goal-driven -> Human-in-the-loop -> Simplified collaboration
 
-#### Networking and discussions
+**AWS Transform for .NET**
 
-- The workshop offered chances to connect with developers, AI researchers, and product designers, deepening my understanding of AI-augmented development.
-- Discussions helped me see AI as a creative collaborator, allowing developers to focus more on system logic and architecture.
+- **Customer benefits**
 
-#### Key lessons
+  + Reduce operating costs by up to 40%
+  + Eliminate operating system license commercial costs
+  + Access a larger developer pool
+  + Cloud scale and performance.
 
-- AI-DLC combined with Kiro is a model for next-generation development tools—AI-first IDEs that deeply integrate AI into the workflow.
-- Kiro’s “less is more” philosophy shows that simplicity and performance can deliver a stronger developer experience than overly complex systems.
-- I learned that successful AI adoption depends not only on technology but also on the design philosophy and integration approach used in tooling.
+- **Technical benefits**
 
-#### Sample images from the event
+  + Vulnerability remediation support
+  + Cross-platform support: Windows, macOS, Linux (x86-64, arm64)
+  + Compatibility with x86-64 and arm64
+  + LightweightContainer
+  + Lambda serverless architecture
 
-## ![Event images](/images/4-EventParticipated/event4-2-1.png)
+**Complete language upgrades in minutes via Amazon Q**
+
+- Accelerate application modernization
+  Automatic Language Upgrade (Java, .NET)
+- Reduce Technical Debt
+- Save Costs and Improve Operational Efficiency
+- Enhance Competitive Advantage
+
+**Kiro application**: Specification-driven development solution
+
+- Kiro helps developers and engineering teams ship high-quality software with AI agents.
+- Kiro turns your prompts into clear requirements, system designs, and discrete tasks.
+- Iterate with Kiro on your specifications and architecture.
+- Kiro agents implement the specification while keeping you in control.
+
+**Agent hook**
+
+- Delegate tasks to AI agents triggered by events such as ‘file save’
+- Agents auto-execute in the background based on your predefined prompts
+- Agent hooks help you scale work by generating documentation, unit tests, or code performance optimizations
+
+**Advanced context management**
+
+- Connect to documents, databases, APIs, and more with native MCP integrations
+- Configure how you want Kiro agents to interact with each project via directive files
+- Drop in an image of your UI design or a photo from your architecture discussion and Kiro can use it to guide implementation
+
+**Power, flexibility, and security**
+
+- Compatible with VS Code
+
+  + Kiro supports VS Code Open VSX plugins, themes, and settings in a streamlined AI-ready environment
+
+- Advanced Claude models
+
+  + Choose between Claude Sonnet 3.7 or Sonnet 4, with more options coming soon
+
+- Enterprise-grade security
+
+  + Kiro is built and operated by AWS
+
+**Use cases**
+
+- Build new applications
+
+  + Quickly go from prototype to production code and deployment, with best practices baked in, including structured design, runbooks, or test coverage scope
+
+- Build on existing applications
+
+  + With smart specification and context management, Kiro makes it easy to integrate and extend existing applications while maintaining consistency
+
+- Refactor and modernize
+
+  + Kiro understands your codebase and can precisely guide refactoring across codebases exceeding one million LOC
+
+#### 4. Learn about AI-driven cloud modernization tailored for VMware environments
+
+**The future state of your VMware workloads**
+
+```
+RELOCATE: Amazon EVS
+|
+REHOST: Amazon EC2
+|
+REPLATFORM TO CONTAINERS: Amazon ECS or Amazon EKS
+|
+REPLATFORM TO MANAGED SERVICES: Amazon RDS, Amazon FSx, Amazon WorkSpaces, and more
+|
+REFACTOR: Modern Application
+
+=> Rapid adoption, foundational cloud benefits and quick ROI....................---->....................All native cloud benefits and high ROI
+```
+
+**AWS Transform for VMware**
+
+- Modernize VMware workloads onto Amazon EC2 with purpose-built AI agents
+- Automate and simplify transformation tasks
+- Reduce costs and licensing fees with Amazon EC2
+- Enhance security, scalability, and resilience
+- Drive innovation with over 200 AWS native services
+
+**Mapping VMware native technologies to AWS**
+
+<img src="/images/4-EventParticipated/4.1-Event1/VMware to AWS native technology mapping.jpg" alt="VMware to AWS native technology mapping" width="1000"/>
+
+**An agentic AI-based approach to VMware modernization**
+
+```
+1. Connect to your VMware environment
+|
+2. Analyze workloads, dependencies, and readiness
+|
+3. Transform VMware network configurations into AWS native constructs
+|
+4. Generate intelligent wave plans based on application dependencies
+|
+5. Validate with your team, then execute
+
+=> Step-by-step transformation with human-in-the-loop validation
+```
+
+**Why AWS Transform for migrating from VMware?**
+
+- **Lower costs**
+
+  + Eliminate VMware licensing fees
+  + Optimize infrastructure costs with AI-driven instance right-sizing
+
+- **Faster migration**
+
+  + Accelerate network transformation up to 80×
+    Minimize disruption, preserve application integrity, and speed up the transition
+
+- **Improved security**
+
+  + Strengthen security with a cloud-native foundation
+  + Migrate safely with a human-in-the-loop validation process
+
+- **Innovation at scale**
+
+  - Reduce technical debt and build modern, scalable applications
+  - Seamlessly integrate with over 200 AWS native services like data lakes, advanced analytics, and AI/ML
+
+#### 5. Connect and learn directly from AWS Solutions Architects and industry experts
+
+- In this part, experts presented the challenges faced in the early stages of full-system modernization from on-premises to AWS.
+
+  + They proposed specific plans and strategies for each area, executing the most critical parts first.
+  + They also adhered to current regulations and laws in management and did not collect user information.
+  + Once on AWS, the most important factor is the ability to scale rapidly, which leads to substantial gains when moving to the AWS environment.
+  + Applying AI is proving highly effective in their businesses—for example, anh Vinh has applied AI to detect potentially fraudulent transactions and defend against hackers in Blockchain.
+
+#### 6. Understand AWS security best practices from development to production environments
+
+### What I Learned
+
+- 5-step framework: **Align → Assess → Mobilize → Modernize → Reinvent**.
+- **GenAI-assisted modernization**: code transformation (Java 8→21, .NET→8), dependency mapping, environment assessment.
+- Prioritize **high-impact workloads**, **human-in-the-loop**, measure **ROI**.
+
+#### Design Thinking
+
+- **Problem→Pilot→Scale**; prioritize **value-first**.
+- **Strangler Fig** refactor by parts; **event-driven** mindset.
+- **Platform thinking/IDP**, **security-by-design**, early **governance**.
+
+#### Technical Architecture
+
+- **Microservices**, **containers (EKS/ECS/Fargate)**, **serverless (Lambda/Step Functions/EventBridge)**.
+- **Data**: Aurora MySQL, MSK (Kafka), ElastiCache (Redis).
+- **VMware→AWS**: rehost EC2 → replatform containers/managed → refactor app.
+- **Multi-arch** (x86_64 + **ARM64**), end-to-end **observability**.
+
+#### Modernization Strategies
+
+- **Assess/Mobilize/MM/Reinvent** (Techcombank blueprint).
+- **AWS Transform**: for **VMware** & **.NET** (automated migration/testing/UI modernization).
+- **Cost-first**: drop Windows/SQL licenses, right-size, ARM64.
+- **Scale & Innovate**: decompose monolith, CI/CD automation, adopt GenAI.
+
+### Application to Work
+
+- Build a **migration backlog** by ROI; select a small **pilot**.
+- Standardize **container baseline** (EKS) + **Bedrock pattern** for GenAI.
+- Use **Amazon Q/Transform** to **upgrade languages** & **refactor** quickly.
+- Design an internal **IDP**: service templates, golden paths, policy guardrails.
+
+### Experience at the event
+
+“**GenAI-powered Migration & Modernization** provided a comprehensive view of transforming applications & databases at enterprise scale. Highlights: demos of automated VMware/.NET migration, serverless–container reference architectures, quantitative ROI lessons and battle-tested governance models, along with case studies that significantly shortened migration time and reduced costs.”
+
+#### Learning from highly specialized speakers
+
+- **Techcombank**: operate with **CCoE**, measure **business outcomes**, 5-step roadmap.
+- **Ninety Eight**: **AI anti-fraud**, strong **security posture**, real-time.
+- **OCB/LPBankS**: **data products**, **automation**, safe **cloud scale**.
+
+#### Hands-on technical experience
+
+- Clear view of **dependency mapping**, **wave planning**, **auto SG/EC2 sizing**, **hub-and-spoke VPC**.
+- **Auto code upgrade**, **cross-platform .NET**, automatic **UI modernization**.
+
+#### Modern tool adoption
+
+- **AWS Transform** (VMware/.NET), **Amazon Q** (auto language upgrade).
+- **Bedrock**, **Lambda**, **ECS/Fargate**, **EKS**, **Step Functions**, **EventBridge**.
+- **Aurora**, **MSK**, **ElastiCache**, **EC2**; **IDP** tooling; **Kiro** (spec→tasks/agents, MCP).
+
+#### Networking and exchange
+
+- Finalize **best practices** from SAs & major banks; **governance/security** checklists.
+- Connect for **mentorship**, **pattern reuse**, **ROI comparison** & **benchmarking**.
+- The event created opportunities to interact directly with experts, peers, and business teams, helping to **strengthen the ubiquitous language** between business and tech.
+
+#### Lessons learned
+
+- Applying DDD and event-driven patterns reduces **coupling** and increases **scalability** and **resilience**.
+
+- A modernization strategy needs a **phased approach** and **ROI** measurement; avoid rushing a full system overhaul.
+
+- AI tools like Amazon Q Developer can **boost productivity** when integrated into the current development workflow.
+
+- **Modernize with strategy**: measure ROI, prioritize by value.
+
+- **Automation + GenAI** shortens timelines and reduces technical debt.
+
+- **Platform/IDP** is a scale lever; **security-by-default** is indispensable.
+
+- **Human-in-the-loop** ensures safety for broad automation.
+
+#### Some photos from the event
+
+<img src="/images/4-EventParticipated/4.1-Event1/event aws.jpg" alt="VietNam Cloud Day 2025" width="2000"/>
+
+> Over 400 passionate technology developers in Thành phố Hồ Chí Minh gathered at the AWS office (36th Floor) to watch the live plenary session from Hà Nội, sharing the excitement and knowledge about AWS Cloud Day Vietnam 2025
+
+> Overall, the event not only provided technical knowledge but also changed my mindset about application design, system modernization, and more effective cross-team collaboration.
