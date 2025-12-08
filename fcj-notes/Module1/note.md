@@ -1,0 +1,143 @@
+# Module 01 - AWS và Hành Trình Lên Mây
+---
+## Module 01-01 - Điện Toán Đám Mây Là Gì?
+- **Điện toán đám mây**: Việc phân phối tài nguyên CNTT theo nhu cầu qua Internet với **CHÍNH SÁCH THANH TOÁN THEO MỨC SỬ DỤNG**.
+- **Giải quyết**:
+  - Tự xây dựng hệ thống máy chủ -> Tốn kém thời gian, tiền bạc để triển khai. **(CHẬM)**
+  - Gửi yêu cầu tới nhà cung cấp dịch vụ -> Nhanh chóng kết nối với máy chủ ảo. **(NHANH)**
+- **Lợi ích**:
+  - Sử dụng bao nhiêu tính tiền bấy nhiêu, cung cấp khả năng **TỐI ƯU HOÁ CHI PHÍ**.
+    - *Buổi tối có thể tắt đi do lượng người dùng giảm giúp tiết kiệm và giảm chi phí vận hành*.
+  - Tăng **TỐC ĐỘ** phát triển nhờ tận dụng các tính năng tự động hóa và quản trị bởi nhà cung cấp dịch vụ.
+  - Linh hoạt, thêm bớt tài nguyên tuỳ ý.
+    - *Môi trường truyền thống -> Không thể thay đổi nay và mai -> Lên kế hoạch trong thời gian dài (3-5 năm)*. 
+    - *Môi trường đám mây -> Có thể thay đổi nay và mai tuỳ vào lượng người dùng*.
+  - Mở rộng quy mô toàn cầu
+    - *Người ngoại quốc muốn sử dụng -> Tận dụng mạng lưới hạ tầng toàn cầu -> Phục vụ dễ dàng*. 
+---
+## Module 01-02 - Điều Gì Tạo Nên Sự Khác Biệt Của AWS?
+- AWS là nhà cung cấp hạ tầng Cloud dẫn đầu trong 13 năm liên tiếp [Tính đến 2023].
+- AWS là nhà cung cấp khác biệt về **TẦM NHÌN** và **VĂN HOÁ**.
+- Nhờ có:
+  - Triết lí về giá của AWS: khách hàng sẽ càng ngày càng trả tiền ít hơn cho cùng dịch vụ / tính năng / tài nguyên sử dung.
+    - Giá gốc -> Có thêm nhiều khách hàng -> Dịch vụ AWS tăng -> Hạ tầng AWS tăng -> Đạt được lợi thế kinh tế theo quy mô -> Chi phí hạ tầng giảm -> Giảm giá gốc
+  - Triết lí về nguyên tắc lãnh đạo (**LEADERSHIP PRINCIPLES**) [CLICK_HERE](https://assets.aboutamazon.com/d4/9b/6d5662ec4a75961ae78c473e7d03/amazon-leadership-principles-070621-us.pdf)
+- Thành tựu: 
+  - Tính đến hiện tại, AWS đã giảm giá hơn 120 lần
+---
+## Module 01-03 - Bắt Đầu Hành Trình Lên Mây Như Thế Nào?
+- **Lời khuyên**:
+  - Kết bạn và kết nối với nhau để cùng nhau học hỏi.
+  - Hạn chế học một mình vì AWS có rất nhiều dịch vụ.
+  - Không bó buộc mình trong LAB của các nhà cung cấp dịch vụ.
+  - Đăng kí tài khoản thực AWS để trải nghiệm thực tế thông qua **FREE TIER** trong 1 năm.
+  - Học AWS để hiểu được toàn cảnh **BIG PICTURE** của ngành nghề.
+---
+## Module 01-04 - Hạ Tầng Toàn Cầu Của AWS
+ - **DATA CENTER**:
+   - Một trung tâm dữ liệu có thể chứa hàng chục ngàn máy chủ
+   - Tất cả trung tâm dữ liệu của AWS đều sử dụng các **THIẾT BỊ ĐƯỢC TỐI ƯU HOÁ DÀNH RIÊNG CHO HOẠT ĐỘNG CỦA AWS**.
+ - **AVAILABILITY ZONE** (AZ):
+   - Một AZ bao gồm một hoặc nhiều **DATA CENTER**.
+   - Được thiết kế để không xảy ra sự cố ảnh hưởng đồng thời 2 AZ một lúc (**FAULT ISOLATION**).
+   - Giữa 2 AZ là đường kết nối riêng tốc độ cao.
+   - Khi đi thi: **AWS khuyến nghị nên triển khai ứng dụng tối thiểu trên 2 AZ**.
+   - Thực tế: Tuỳ tình hình và nhu cầu về độ sẵn sàng của ứng dụng mà có triển khai trên 2 AZ hay không.
+     - Ví dụ: Môi trường DEV-TEST có thể chạy trên 1 AZ và thực hiện backup
+ - **REGION**:
+   - Một AWS **REGION** bao gồm **TỐI THIỂU 3 AZ**.
+   - Hiện tại có hơn 25 Region trên toàn cầu.
+   - Các Region được kết nối với nhau bởi mạng backbone của AWS.
+   - Mặc định dữ liệu và dịch vụ ở các Region độc lập với nhau. (Trừ một số dịch vụ ở quy mô Global)
+   - Cách chọn Region:
+      - Chọn Region gần với người dùng nhất.
+       - Người dùng VN thì chọn Region Singapore cho độ trễ thấp. 
+      - Có những dịch vụ đặc thù, mới triển khai thì kết nối Region ở xa hơn.
+        - GenAI mới triển khai ở Region US  
+      - Quy mô càng lớn, Khách hàng càn nhiều, Chi phí càng rẻ
+        - Sau này giá ở Region Singapore sẽ rẻ hơn Region Vietnam
+        - Những hệ thống không đòi hỏi độ trễ, có thể chạy Region US để giảm chi phí
+ - **EDGE LOCATION**:
+    - Là mạng lưới trung tâm dữ liệu thứ cấp, được thiết kế để chạy những dịch vụ mạng biên với độ trễ thấp nhất.
+    - Các dịch vụ tại Edge Location (POP - Point-of-Presence):
+      - CloudFont (CDN - Content-Delivery-Network) lấy dữ liệu trực tiếp có trong bộ nhớ tại POP để trả lại dữ liệu nhanh nhất.
+      - Web Application Firewall (WAF) là dịch vụ tường lửa lớp số 7 đóng vai trò bảo vệ ứng dụng của mình, giảm bớt các cuộc tấn công DDOS.
+      - Route 53 (DNS Service) tạo những domain cho web của mình, gắn certificate vào domain
+---
+## Module 01-05 - Công Cụ Quản Lý AWS Services
+ - **AWS Management Console - Login**:
+   - ROOT user: Tài khoản đăng kí đầu tiên gồm thông tin cá nhân, tài khoản này cực kì quan trọng nên hạn chế sử dụng.
+   - IAM user: Tài khoản con được tạo ra từ ROOT user, giúp quản lý truy suất sử dụng tài nguyên AWS. Khi đăng nhập, cần cung cấp thêm **ACCOUNT ID**(chuỗi gồm 12 chữ số)
+ - **AWS Managament Console - Service Search**:
+   -  Sau khi Login, có thể tìm kiếm các dịch vụ (**service**) của AWS.
+   -  Mỗi một dịch vụ sẽ có trang management riêng cho phép sử dụng các tính năng (**feature**) của dịch vụ đó.
+ - **AWS Managament Console - Support Center**:
+   - Bên tay phải màn hình, có menu Support, chúng ta có thể vào **Support Center** để tạo các support case để yêu cầu hỗ trợ từ đội ngũ của AWS.
+ - **AWS Command Line Interface**:
+   - Giao diện dòng lệnh AWS (AWS CLI) là một công cụ mã nguồn mỡ cho phép bạn tương tác với các dịch vụ AWS bằng cách sử dụng các lệnh (command line).
+   - Cho phép triển khai các chức năng tương đương được cung cấp bởi AWS Management Console trên trình duyệt.
+     - User -> Passwords -> AWS Management Console -> AWS Services Endpoint
+     - User -> AccessKey / Secret AccessKey -> AWS Command Line Interface -> AWS Services Endpoint
+ - **AWS Software Developer Kit (SDK)**:
+   - Đơn giản hoá trong việc xây dựng ứng dụng
+   - Tận dụng những dịch vụ, tính năng AWS cung cấp
+   - Thư viện hỗ trợ nhiều ngôn ngữ khác nhau
+   - Đội ngũ phát triển sử dụng một bộ thư viện nhất quán và quen thuộc
+   - Cung cấp hỗ trợ cho việc quản lí vòng đời của API tới AWS Services
+     - Apps / AccessKey / Secret AccesKey -> AWS Tools and SDK -> AWS Services Endpoint 
+---
+## Module 01-06 - Tối Ưu Hoá Chi Phí Trên AWS Và Làm Việc Với AWS Support
+ - **Tối Ưu hoá Chi Phí Trên AWS**:
+   - Lựa chọn cấu hình tài nguyên tính toàn và nơi lưu trữ dữ liệu phù hợp
+     - Chạy ở môi trường truyền thống không bao giờ 100 % -> Mang nguyên cấu hình lên Cloud -> Gây lãng phí, ko hiệu quả.
+   - Tận dụng các phương thức thanh toán giảm giá như
+     - Reserved Instance
+     - Saving Plan
+     - Spot
+   - Cơ chế "On-demand" - "Xài bao nhiêu Tính bấy nhiêu" -> Tính tiền dựa theo Giây, Phút, Giờ -> Chi phí Cao Nhất
+   - Cơ chế "Cam kết sử dụng càng lâu dài" - "Reserved Instance, Saving Plan" -> Có những mức Discount càng cao
+   - Cơ chế "Spot" - "Tài nguyên tạm" -> Nguồn tài nguyên sẵn sàng mở rộng -> Để không gây lãng phí -> Cho Thuê rất thấp có thể tới 90% nhưng sẽ có thể bị lấy lại bất cứ lúc nào
+   - Xoá các tài nguyên không sử dụng, bật tắt tự động các tài nguyên không cần chạy 24/7
+   - Tận dụng các dịch vụ **SERVERLESS** (Phi Máy Chủ)
+     - Là những dịch vụ không trực tiếp quản lí máy chủ ảo
+     - Ví dụ: quản lí Database bằng công cụ AWS
+   - **Thiết Kế Kiến Trúc Tối Ưu** giải quyết yêu cầu đề ra **CỰC KÌ QUAN TRỌNG**
+     - Giải quyết những yêu cầu, đáp ứng các ràng buộc
+     - TỐI ƯU HOÁ chi phí từ kiến trúc, cơ sở dữ liệu, câu truy vấn, ...
+   - Cài đặt và sử dụng AWS Budget
+     - Theo dõi và gửi cảnh báo mức sử dụng chi phí mỗi ngày / tuần / tháng
+     - Gửi cảnh báo dự đoán chi phí vượt qua mức dự định
+     - Gửi cảnh báo theo dịch vụ
+     - Thực hiện Actions để tắt máy chủ
+   - Quản lí chi phí theo phòng ban / ứng dụng với **cost allocation tag**
+   - **Liên tục** theo dõi và tối ưu hoá chi phí
+   - **GIÚP DOANH NGHIỆP KIẾM TIỀN, GIÚP DOANH NGHIỆP TIẾT KIỆM TIỀN**
+ - **Công cụ tính toán chi phí**:
+   - Cho phép tạo các estimate các dịch vụ thông dụng
+   - Có thể chia sẻ các estimate cho người khác
+   - Chi phí sẽ khác biệt theo từng Region...
+ - **Làm việc với AWS Support**
+   - AWS có 4 gói hỗ trợ chính
+     - Basic (Explore)
+     - Developer (Test/Dev)
+     - Business (Production)
+     - Enterprise (Large Enterprise)
+   - Có thể nâng cấp gói hỗ trợ trong thời gian ngắn để đẩy nhanh tốc độ hỗ trợ khi có sự cố quan trọng cần xử lý nhanh
+---
+## Module 01-07 - Thực Hành Và Nghiên Cứu Bổ Sung
+  - **Lab 01: Tạo tài khoản AWS**:
+    - Tạo tài khoản AWS
+    - Thiết lập MFA cho tài khoản AWS(Root)
+    - Tài khoản và Nhóm Admin
+    - Hỗ trợ xác thực tài khoản
+  - **Lab 07: Bắt đầu với AWS Budgets**:
+    - Tạo Cost budget
+    - Tạo Usage budget
+    - Tạo Reservation budget
+    - Tạo Saving Plans budget
+  - **Lab 09: Yêu cầu hỗ trợ AWS Support**:
+    - Các gói hỗ trợ AWS
+    - Truy cập AWS Support
+    - Quản lí yêu cầu hỗ trợ
+  - **Nghiên cứu bổ sung**:
+    - AWS Well Architected Framework     
