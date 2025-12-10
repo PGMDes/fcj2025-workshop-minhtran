@@ -14,8 +14,6 @@ pre: " <b> 1.3. </b> "
 
 ### Tasks to be carried out this week:
 
-### 2. English Version
-
 | Day | Task | Start Date | End Date | Resources & Notes |
 |---|---|---|---|---|
 | Mon | **Amazon EC2:**<br>- Architecture, Instance Types, AMI, Key Pairs.<br>- Storage: **EBS** vs. **Instance Store**.<br>- Configuration: User Data, Meta Data.<br>- Management: **Auto Scaling** & Pricing Options. | 22/09/2025 | 22/09/2025 | [Module 03](https://github.com/PGMDes/fcj2025-workshop-minhtran/blob/main/fcj-notes/Module3/note3.md) |
