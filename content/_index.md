@@ -1,25 +1,40 @@
 ---
-title: "Cloud Racket Platform"
-date: "2025-11-09"
-type: "page"
+title: "Internship Report"
+date: "2025-09-09"
+weight: 1
+chapter: false
 ---
 
-# Cloud Racket Platform
-## A Unified AWS Serverless Solution for Sports Court Booking
+# Internship Report
 
-Welcome to the Cloud Racket Platform proposal documentation. This platform is designed to revolutionize badminton court booking in Ho Chi Minh City through AWS Serverless architecture.
+### Student Information:
 
-### Quick Navigation
+&emsp; **Full Name:** Tran Huynh Bao Minh
 
-1. [Introduction](1-introduction/) - Overview and project introduction
-2. [Executive Summary](2-executivesummary/) - Platform overview and key features  
-3. [Problem Statement](3-problemstatement/) - Current challenges and proposed solutions
-4. [Solution Architecture](4-solutionarchitecture/) - AWS services and system design
-5. [Technical Implementation](5-technicalimplementation/) - Development phases and requirements
-6. [Timeline & Milestones](6-timelinemilestones/) - Project roadmap and milestones
-7. [Budget Estimation](7-budgetestimation/) - Cost analysis and pricing
-8. [Risk Assessment](8-riskassessment/) - Risk evaluation and mitigation strategies
+&emsp; **Phone Number:** 078 222 4 999
 
----
+&emsp; **Email:** baominhbrthcs@gmail.com
 
-**Get Started**: Begin with the [Introduction](1-introduction/) to understand the platform overview and objectives.
+&emsp; **University:** FPT University Campus Ho Chi Minh
+
+&emsp; **Major:** Artificial Intelligence
+
+&emsp; **Class:** SE193028
+
+&emsp; **Internship Company:** Amazon Web Services Vietnam Co., Ltd.
+
+&emsp; **Internship Position:** FCJ Cloud Intern
+
+&emsp; **Internship Duration:** From 12/08/2025 to 12/12/2025
+
+<img src="/images/avatar_new_02.jpg" alt="Your profile picture" width="450"/>
+
+### Report Content
+
+1.  [Worklog](1-Worklog/)
+2.  [Proposal](2-Proposal/)
+3.  [Translated Blogs](3-BlogsTranslated/)
+4.  [Events Participated](4-EventParticipated/)
+5.  [Workshop](5-Workshop/)
+6.  [Self-evaluation](6-Self-evaluation/)
+7.  [Sharing and Feedback](7-Feedback/)
