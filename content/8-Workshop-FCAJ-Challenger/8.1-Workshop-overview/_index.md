@@ -18,9 +18,10 @@ The main objective is to establish a fully automated and serverless data process
 
 > 💡 **Highlight:** This solution allows you to **eliminate the need to manage any server infrastructure**, optimizing costs and operational time.
 
-![overview](/images/5-Workshop/5.1-Workshop-overview/overview_diagram.png)
+![overview](/images/8-Workshop-FCAJ-Challenger/diagram-architecture-01.jpg)
 
 #### Contents
 
 1. [RAG Explanation](5.1.1-WhatIsRag/)
 2. [Service Introduction](5.1.2-Services/)
+3. [Team Introduction](8.1.3-TeamIntroduction/)

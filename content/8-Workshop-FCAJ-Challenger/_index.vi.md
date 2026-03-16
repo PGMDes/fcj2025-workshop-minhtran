@@ -1,7 +1,7 @@
 ---
 title: "Workshop"
 date: "2025-09-09"
-weight: 5
+weight: 8
 chapter: false
 pre: " <b> 8. </b> "
 ---
@@ -33,7 +33,7 @@ Khi kết thúc workshop, bạn sẽ có một hệ thống Chatbot thực tế,
 
 #### Nội dung
 
-1. [Tổng quan về Workshop](5.1-Workshop-overview/)
+1. [Tổng quan về Workshop](8.1-Workshop-overview/)
 2. [Chuẩn bị môi trường](5.2-Prerequiste/)
 3. [Tạo và cấu hình Knowledge Base](5.3-Knowledge-Base/)
 4. [Kiểm tra Chatbot (RAG)](5.4-Test-Chatbot/)

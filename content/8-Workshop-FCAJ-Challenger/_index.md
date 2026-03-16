@@ -1,7 +1,7 @@
 ---
 title: "Workshop"
 date: "2025-09-09"
-weight: 5
+weight: 8
 chapter: false
 pre: " <b> 8. </b> "
 ---
@@ -33,7 +33,7 @@ By the end of the workshop, you will have a practical, functioning Chatbot syste
 
 #### Contents
 
-1. [Workshop Overview](5.1-Workshop-overview/)
+1. [Workshop Overview](8.1-Workshop-overview/)
 2. [Environment Preparation](5.2-Prerequiste/)
 3. [Create and Configure Knowledge Base](5.3-Knowledge-Base/)
 4. [Test Chatbot (RAG)](5.4-Test-Chatbot/)
