@@ -6,30 +6,297 @@ chapter: false
 pre: " <b> 8. </b> "
 ---
 
-# Xây dựng ứng dụng RAG sử dụng Knowledge Bases cho Amazon Bedrock
+![overview](/images/8-Workshop-FCAJ-Challenger/diagram-architecture-01.jpg)
 
-#### Tổng quan
+## 1. Data Ingestion – Data Input → Amazon S3 (Raw Data)
 
-**Knowledge Bases for Amazon Bedrock** là một tính năng được quản lý hoàn toàn giúp bạn triển khai kỹ thuật RAG (Retrieval-Augmented Generation) bằng cách kết nối các Foundation Models với nguồn dữ liệu nội bộ của bạn để cung cấp các phản hồi chính xác, có trích dẫn và phù hợp với ngữ cảnh.
+Nguồn dữ liệu ban đầu là dataset Yellow Taxi Trips từ NYC Taxi and Limousine Commission.
 
-> RAG là một kỹ thuật để tối ưu hóa đầu ra của Large Language Model (LLM) bằng cách truy xuất thông tin từ cơ sở dữ liệu bên ngoài đáng tin cậy (Retrieval) và thêm nó vào ngữ cảnh (Augmentation) trước khi tạo ra câu trả lời (Generation). Phương pháp này giúp khắc phục những hạn chế về dữ liệu huấn luyện lỗi thời và đảm bảo AI trả lời dựa trên thông tin thực tế được cung cấp.
+| Field                 | Ý nghĩa               |
+| --------------------- | --------------------- |
+| VendorID              | ID hãng taxi          |
+| tpep_pickup_datetime  | Thời gian đón khách   |
+| tpep_dropoff_datetime | Thời gian trả khách   |
+| passenger_count       | Số hành khách         |
+| trip_distance         | Khoảng cách chuyến đi |
+| PULocationID          | ID vị trí đón         |
+| DOLocationID          | ID vị trí trả         |
+| fare_amount           | Giá cước              |
+| tip_amount            | Tiền tip              |
+| total_amount          | Tổng tiền             |
 
-Trong bài lab này, chúng ta sẽ học cách xây dựng một trợ lý AI có khả năng "đọc và hiểu" các tài liệu doanh nghiệp độc quyền. Bạn sẽ thực hiện quy trình từ việc nhập dữ liệu và tạo chỉ mục vector đến cấu hình mô hình để trả lời câu hỏi dựa trên những tài liệu đó mà không cần quản lý bất kỳ máy chủ nào.
+Dữ liệu thô được upload vào bucket S3 Raw.
 
-Chúng ta sẽ sử dụng ba thành phần chính để thiết lập quy trình xử lý RAG hoàn chỉnh:
+Ví dụ:
 
-- **Nguồn dữ liệu (Amazon S3)** - Đóng vai trò là kho lưu trữ "sự thật". Bạn sẽ tải các tài liệu (PDF, Word, Text) lên một S3 bucket. Knowledge Base sẽ sử dụng nguồn này để đồng bộ hóa dữ liệu.
-- **Vector Store (OpenSearch Serverless)** - Nơi lưu trữ các embeddings vector (dữ liệu được mã hóa bằng số). Khi người dùng đặt câu hỏi, hệ thống sẽ thực hiện tìm kiếm ngữ nghĩa tại đây để trích xuất các đoạn văn bản liên quan nhất thay vì tìm kiếm từ khóa tiêu chuẩn.
-- **Foundation Model (Claude 3)** - Large Language Model đóng vai trò là bộ não xử lý. Nó nhận câu hỏi của người dùng cùng với thông tin tìm thấy từ Vector Store, sau đó tổng hợp và tạo ra câu trả lời tự nhiên, chính xác kèm theo trích dẫn nguồn.
+    s3://taxi-data-raw/yellow_tripdata_2024_01.parquet
 
-#### Kết quả đạt được
+    s3://taxi-data-raw/yellow_tripdata_2024_02.parquet
 
-Khi kết thúc workshop, bạn sẽ có một hệ thống Chatbot thực tế, hoạt động với các tính năng sau:
+S3 đóng vai trò:
+- Data Lake raw layer
+- Lưu parquet / csv gốc
+- Chưa xử lý
 
-- Trò chuyện hỏi đáp về nội dung tài liệu độc quyền.
-- Câu trả lời chính xác, không có ảo giác (hallucinations).
-- Trích dẫn nguồn (biết chính xác câu trả lời đến từ trang nào).
-- Triển khai nhanh chóng mà không cần viết mã xử lý dữ liệu phức tạp.
+## 2. Event Detection – S3 → EventBridge
+Khi có file mới trong bucket raw:
+
+    PUT Object → S3 Event
+
+event này được gửi tới Amazon EventBridge.
+
+EventBridge phát hiện:
+
+    ObjectCreated
+
+Ví dụ event:
+```
+{
+ "source": "aws.s3",
+ "detail-type": "Object Created",
+ "bucket": "taxi-data-raw",
+ "object": "yellow_tripdata_2024_01.parquet"
+}
+```
+
+## 3. EventBridge Trigger → Data Processing Workflow
+EventBridge kích hoạt workflow xử lý dữ liệu.
+
+Workflow orchestration nằm trong Step Functions.
+
+Service orchestration giúp:
+- Điều phối pipeline
+- Retry khi lỗi
+- Log trạng thái pipeline
+
+## 4. Data Profiling – AWS Glue DataBrew Profile
+Step Function gọi AWS Glue DataBrew để data profiling.
+
+DataBrew Profile sẽ phân tích dataset:
+
+Ví dụ với Yellow Taxi dataset:
+
+| Column          | Insight       |
+| --------------- | ------------- |
+| passenger_count | max=6         |
+| trip_distance   | max≈200 miles |
+| fare_amount     | có giá trị âm |
+| PULocationID    | 263 giá trị   |
+
+Mục tiêu:
+- Detect missing values
+
+- Detect outliers
+
+- Detect data type mismatch
+
+Ví dụ:
+```
+fare_amount < 0
+
+trip_distance = 0
+
+passenger_count = null
+```
+## 5. Lambda – Pipeline Control
+Sau profiling, AWS Lambda được gọi.
+
+Lambda thực hiện:
+
+1️⃣ đọc kết quả profiling
+
+2️⃣ quyết định pipeline step tiếp theo
+
+Ví dụ logic:
+```
+if null_rate > 20%:
+    send_alert()
+else:
+    start_databrew_recipe()
+```
+Lambda đóng vai trò:
+- orchestration logic
+
+- validation logic
+
+## 6. Data Transformation – Glue DataBrew Recipe
+DataBrew Recipe thực hiện ETL transformation.
+
+Các bước transform thường dùng cho dataset taxi:
+
+**Cleaning**
+```
+remove null passenger_count
+remove negative fare
+remove trip_distance = 0
+```
+**Feature Engineering**
+
+Tạo thêm feature:
+```
+trip_duration = dropoff - pickup
+trip_speed = trip_distance / duration
+tip_ratio = tip_amount / fare_amount
+```
+**Data Type Standardization**
+```
+datetime → timestamp
+numeric → float
+```
+**Partitioning**
+```
+year
+month
+day
+```
+## 7. Store Processed Data – S3 Processed Layer
+Data sau khi ETL được lưu vào bucket:
+```
+s3://taxi-data-processed/
+```
+Ví dụ:
+```
+s3://taxi-data-processed/year=2024/month=01/yellow_tripdata.parquet
+```
+Đây là curated data layer.
+
+Format thường dùng:
+- Parquet
+- Columnar format
+- Tối ưu query analytics
+
+## 8. Data Warehouse Load – Amazon Redshift
+Processed data được load vào Amazon Redshift.
+
+Có thể dùng:
+```
+COPY command
+```
+Ví dụ:
+```
+COPY yellow_trip
+FROM 's3://taxi-data-processed/'
+IAM_ROLE 'RedshiftRole'
+FORMAT AS PARQUET;
+```
+Sau khi load, ta có bảng analytics:
+```
+fact_taxi_trip
+```
+Schema ví dụ:
+```trip_id
+pickup_datetime
+dropoff_datetime
+trip_distance
+fare_amount
+tip_amount
+total_amount
+pickup_zone
+dropoff_zone
+```
+Redshift tối ưu cho:
+- OLAP
+- BI dashboard
+- aggregations
+
+## 9. Visualization – Amazon QuickSight
+Dashboard được tạo bằng Amazon QuickSight.
+
+Ví dụ dashboard:
+
+**Trip Demand**
+```
+Trips per hour
+Trips per zone
+Trips per day
+```
+**Revenue**
+```
+Total fare by zone
+Average tip ratio
+Revenue per vendor
+```
+**Spatial Analysis**
+```
+Pickup heatmap NYC
+Dropoff heatmap
+```
+## Athena (Ad-hoc Query Layer)
+Ngoài Redshift, pipeline cho phép truy vấn trực tiếp S3 bằng Amazon Athena.
+
+Athena dùng khi:
+- query dữ liệu nhanh
+- khám phá dataset
+- không cần load vào warehouse
+
+Ví dụ query:
+```
+SELECT
+date_trunc('hour', pickup_datetime) as hour,
+count(*) as trips
+FROM yellow_trip
+GROUP BY hour
+ORDER BY hour
+```
+
+## Monitoring & Security Layer
+Pipeline được giám sát bởi:
+
+**Identity**: AWS Identity and Access Management
+
+**Logging**: AWS CloudTrail
+
+**Metrics**: Amazon CloudWatch
+
+**Alerting**: Amazon Simple Notification Service
+
+Ví dụ:
+```
+ETL failed → CloudWatch Alarm → SNS → email
+```
+
+## Tổng kết Workflow
+Pipeline có thể tóm tắt như sau:
+```
+Data Source
+      ↓
+S3 Raw Data Lake
+      ↓
+EventBridge Trigger
+      ↓
+Step Functions Orchestration
+      ↓
+Glue DataBrew Profiling
+      ↓
+Lambda Validation
+      ↓
+Glue DataBrew ETL
+      ↓
+S3 Processed Layer
+      ↓
+Redshift Data Warehouse
+      ↓
+QuickSight Dashboard
+```
+
+## Ý nghĩa kiến trúc
+Pipeline này thực hiện modern data lake architecture:
+
+| Layer         | Service        |
+| ------------- | -------------- |
+| Raw Layer     | S3             |
+| Processing    | Glue DataBrew  |
+| Orchestration | Step Functions |
+| Compute Logic | Lambda         |
+| Warehouse     | Redshift       |
+| Query         | Athena         |
+| BI            | QuickSight     |
+
+Ưu điểm:
+- Serverless
+- Scalable
+- Event-driven
+- Cost efficient
 
 #### Nội dung
 
